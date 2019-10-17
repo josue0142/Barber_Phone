@@ -15,6 +15,18 @@ namespace Barber_Phone.Views
         public login()
         {
             InitializeComponent();
+
+            //Carga de opciones para el picker
+            pkTipoLogin.Items.Add("Cliente");
+            pkTipoLogin.Items.Add("Barbero");
+        }
+
+        //Metodo para un clic del btn ingresa, No programado, En fase de prueba
+        private void btnIngresar_Clicked(object sender, EventArgs e)
+        {
+            lblRespuesta.Text = "Bienvenido Nuevo " + pkTipoLogin.SelectedItem;
+            txtCorreo.Text = "";
+            txtContraseña.Text = "";
         }
     }
 }

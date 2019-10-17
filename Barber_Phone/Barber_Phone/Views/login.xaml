@@ -6,10 +6,21 @@
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.login">
 
-        <StackLayout Orientation="Vertical">
-          
-            
-            
+    <Grid>
+
+        <Image 
+            Source="@drawable/background.jpg" 
+            Aspect="AspectFill" />
+
+        <BoxView 
+            Color="WhiteSmoke" 
+            Opacity="0.9" />
+
+        <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
+
+        <StackLayout 
+            Orientation="Vertical">
+
             <Label 
             Text="Log-In" 
             FontSize="22" 
@@ -17,8 +28,8 @@
             FontAttributes="Italic"
             Margin="0,85,0,50"/>
 
-
-            <Image Source="@drawable/logo.png" />
+            <Image 
+                Source="@drawable/logo.png" />
 
             <Entry
             x:Name="txtCorreo"
@@ -28,31 +39,40 @@
             <Entry
             x:Name="txtContraseña"
             Placeholder="Contraseña"
-            Margin="25,10,25,40"/>
+            Margin="25,10,25,20"/>
 
-            <StackLayout Orientation="Horizontal">
+            <Picker
+                x:Name="pkTipoLogin"
+                Margin="35,0,35,40"
+                Title="Seleccione el tipo de ingreso"
+                FontSize="20"/>
+
+            <StackLayout 
+                Orientation="Horizontal">
 
                 <Button 
-            x:Name="btnIngresar" 
-            Text="Ingresar"
-            FontSize="18"
-            BorderColor="Red"
-            Margin="50,15,35,0"/>
+                x:Name="btnIngresar" 
+                Text="Ingresar"
+                FontSize="18"
+                BorderColor="Red"
+                Margin="60,15,0,0"
+                Clicked="btnIngresar_Clicked"/>
 
                 <Button 
-            x:Name="btnRegistrar" 
-            Text="Registrar"
-            FontSize="18"
-            BorderColor="Red"
-            Margin="50,15,25,0"/>
+                x:Name="btnRegistrar" 
+                Text="Registrar"
+                FontSize="18"
+                BorderColor="Red"
+                Margin="50,15,0,0"/>
 
             </StackLayout>
-
 
             <Label 
             x:Name="lblRespuesta" 
             Text="............"/>
 
         </StackLayout>
+
+    </Grid>
 
 </ContentPage>

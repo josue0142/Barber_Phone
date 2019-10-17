@@ -9,21 +9,21 @@
 
     <Grid>
 
-        <Image Source="@drawable/background.jpg" Aspect="AspectFill" />
+        <Image 
+            Source="@drawable/background.jpg" 
+            Aspect="AspectFill" />
 
+        <BoxView 
+            Color="WhiteSmoke" 
+            Opacity="0.9" />
 
-        <BoxView Color="WhiteSmoke" Opacity="0.9" />
+        <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
 
-       <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
-
-        <StackLayout Orientation="Vertical">
-
-
+        <StackLayout 
+            Orientation="Vertical">
 
             <Image Source="@drawable/logo1"  
             Margin="0,15,0,15"/>
-
-
 
             <Entry
             x:Name="txtCorreo"
@@ -35,16 +35,17 @@
             Placeholder="Contraseña"
             Margin="25,10,25,40"/>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout 
+                Orientation="Horizontal">
 
-                <Button 
+            <Button 
             x:Name="btnIngresar" 
             Text="Ingresar"
             FontSize="18"
             BorderColor="Red"
             Margin="50,15,35,0"/>
 
-                <Button 
+            <Button 
             x:Name="btnRegistrar" 
             Text="Registrar"
             FontSize="18"
@@ -61,8 +62,5 @@
         </StackLayout>
 
     </Grid>
-
-    
-    
 
 </ContentPage>
