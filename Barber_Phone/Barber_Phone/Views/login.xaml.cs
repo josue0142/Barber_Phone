@@ -22,11 +22,39 @@ namespace Barber_Phone.Views
         }
 
         //Metodo para un clic del btn ingresa, No programado, En fase de prueba
-        private void btnIngresar_Clicked(object sender, EventArgs e)
+        private async void btnIngresar_Clicked(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txtCorreo.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar un correo", "Aceptar");
+                txtCorreo.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(txtContraseña.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar una contraseña", "Aceptar");
+                txtContraseña.Focus();
+                return;
+            }
+
+
+            
+            if (pkTipoLogin.SelectedItem.ToString() == "Cliente")
+            {
+                lblRespuesta.Text = "Bienvenido " + "Cliente";
+            }
+            if(pkTipoLogin.SelectedItem.ToString() == "Barbero")
+            {
+                lblRespuesta.Text = "Bienvenido  " + "Barbero";
+            }
+            /*else
+            {
+                lblRespuesta.Text = "error, debe seleccionar un tipo de usuario";
+            }*/
+            /*
             lblRespuesta.Text = "Bienvenido Nuevo " + pkTipoLogin.SelectedItem;
             txtCorreo.Text = "";
-            txtContraseña.Text = "";
+            txtContraseña.Text = "";*/
         }
     }
 }
