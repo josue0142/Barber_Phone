@@ -19,6 +19,7 @@ namespace Barber_Phone.Views
             //Carga de opciones para el picker
             pkTipoLogin.Items.Add("Cliente");
             pkTipoLogin.Items.Add("Barbero");
+            txtContraseña.IsPassword = true;
         }
 
         //Metodo para un clic del btn ingresa, No programado, En fase de prueba
