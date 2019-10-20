@@ -6,8 +6,9 @@
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.login">
 
-    <Grid>
+    <Grid Padding="5">
 
+            
         <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
@@ -17,8 +18,11 @@
             Opacity="0.9" />
 
         <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
+      
 
-        <StackLayout 
+         
+
+            <StackLayout 
             Orientation="Vertical">
 
             <!--<Label 
@@ -56,7 +60,7 @@
                 Text="Ingresar"
                 FontSize="18"
                 BorderColor="SeaShell"
-                Margin="30,15,0,0"
+                Margin="15,15,0,0"
                 WidthRequest="150"
                 HeightRequest="50"
                 CornerRadius="40"
@@ -76,7 +80,7 @@
                 BorderWidth="3.5"
                 TextColor="Black"
                 BackgroundColor="SeaShell"
-                Margin="30,15,0,0"/>
+                Margin="15,15,0,0"/>
 
             </StackLayout>
 
@@ -85,7 +89,8 @@
             Text="............"/>
 
         </StackLayout>
-
-    </Grid>
+            
+        </Grid>
+    
 
 </ContentPage>

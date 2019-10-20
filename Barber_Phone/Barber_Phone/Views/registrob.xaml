@@ -5,11 +5,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.registrob">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+
+
+    <Grid Padding="5">
+        
+      
+        <Image 
+            Source="@drawable/background.jpg" 
+            Aspect="AspectFill" />
+
+        <BoxView 
+            Color="WhiteSmoke" 
+            Opacity="0.9" />
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout 
+            Orientation="Vertical">
+
+
+
+                <Label Text="Formulario de registro para Barbero." 
+            Margin="15,10,0,0"
+            FontSize="24" FontAttributes="Bold,Italic"/>
+
+                <Label Text="Number" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="3" VerticalOptions="Center"/>
+                <Entry Text="{Binding CardNumber, Mode=TwoWay}" Keyboard="Numeric"
+               Placeholder="Enter your card number" Grid.Row="2" Grid.Column="1"/>
+
+
+            </StackLayout>
+
+
+
+
+
+        </Grid>
+        
+        
+        
+        
+    </Grid>
+
+  
+   
 </ContentPage>
