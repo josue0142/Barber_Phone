@@ -15,6 +15,11 @@ namespace Barber_Phone.Views
         public registrob()
         {
             InitializeComponent();
+
+
+            //Inicio. Establece campo de contraseña con caracteres ocultos
+            txtcontraseñab.IsPassword = true;
+            //Fin
         }
     }
 }
