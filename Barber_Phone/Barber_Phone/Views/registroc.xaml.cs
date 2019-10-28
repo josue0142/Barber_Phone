@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class registrob : ContentPage
+    public partial class registroc : ContentPage
     {
-        public registrob()
+        public registroc()
         {
             InitializeComponent();
-
-
-            //Inicio. Establece campo de contraseña con caracteres ocultos
-            txtcontraseñab.IsPassword = true;
-            //Fin
         }
     }
 }
