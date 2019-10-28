@@ -15,7 +15,7 @@
 
         <BoxView 
             Color="WhiteSmoke" 
-            Opacity="0.9" />
+            Opacity="0.7" />
 
         <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
       
