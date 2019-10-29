@@ -11,7 +11,7 @@ namespace Barber_Phone
         {
             InitializeComponent();
 
-            MainPage = new login();
+            MainPage = new NavigationPage(new login());
         }
 
         protected override void OnStart()

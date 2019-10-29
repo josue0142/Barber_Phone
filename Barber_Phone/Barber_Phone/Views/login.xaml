@@ -4,25 +4,27 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.login">
+             x:Class="Barber_Phone.Views.login"
+             NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
+             por navigationPage-->
 
-    <Grid Padding="5">
+    <Grid 
+        Padding="5">
 
-            
         <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
 
         <BoxView 
             Color="WhiteSmoke" 
-            Opacity="0.9" />
+            Opacity="0.7" />
 
         <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
-      
 
-         
 
-            <StackLayout 
+
+
+        <StackLayout 
             Orientation="Vertical">
 
             <!--<Label 
@@ -36,15 +38,22 @@
                 Source="logo2.png"
                 Margin="25"/>
 
-            <Entry
-            x:Name="txtCorreo"
-            Placeholder="Ingrese correo"
-            Margin="25,10,25,10"/>
+            <ActivityIndicator
+                x:Name="waitActivityIndicator"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
 
             <Entry
-            x:Name="txtContraseña"
-            Placeholder="Contraseña"
-            Margin="25,10,25,20"/>
+                x:Name="txtCorreo"
+                Placeholder="Ingrese correo"
+                Margin="25,10,25,10"/>
+
+            <Entry
+                x:Name="txtContraseña"
+                Placeholder="Contraseña"
+                IsPassword="True"
+                Margin="25,10,25,20"/>
 
             <Picker
                 x:Name="pkTipoLogin"
@@ -56,41 +65,42 @@
                 Orientation="Horizontal">
 
                 <Button 
-                x:Name="btnIngresar" 
-                Text="Ingresar"
-                FontSize="18"
-                BorderColor="SeaShell"
-                Margin="15,15,0,0"
-                WidthRequest="150"
-                HeightRequest="50"
-                CornerRadius="40"
-                BorderWidth="3.5"
-                TextColor="black"
-                BackgroundColor="SeaShell"
-                Clicked="btnIngresar_Clicked"/>
+                    x:Name="btnIngresar" 
+                    Text="Ingresar"
+                    FontSize="18"
+                    BorderColor="SeaShell"
+                    Margin="15,15,0,0"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="black"
+                    BackgroundColor="SeaShell"
+                    Clicked="btnIngresar_Clicked"/>
 
                 <Button 
-                x:Name="btnRegistrar" 
-                Text="Registrar"
-                FontSize="18"
-                BorderColor="SeaShell"
-                WidthRequest="150"
-                HeightRequest="50"
-                CornerRadius="40"
-                BorderWidth="3.5"
-                TextColor="Black"
-                BackgroundColor="SeaShell"
-                Margin="15,15,0,0"/>
+                    x:Name="btnRegistrar" 
+                    Text="Registrar"
+                    FontSize="18"
+                    BorderColor="SeaShell"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="Black"
+                    BackgroundColor="SeaShell"
+                    Margin="15,15,0,0"
+                    Clicked="btnRegistrar_Clicked"/>
 
             </StackLayout>
 
             <Label 
-            x:Name="lblRespuesta" 
-            Text="............"/>
+                x:Name="lblRespuesta" 
+                Text="............"/>
 
         </StackLayout>
-            
-        </Grid>
-    
+
+    </Grid>
+
 
 </ContentPage>
