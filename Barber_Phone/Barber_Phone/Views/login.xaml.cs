@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Barber_Phone.Datos;
+using System.Collections;
 
 namespace Barber_Phone.Views
 {
@@ -16,21 +17,22 @@ namespace Barber_Phone.Views
         {
             InitializeComponent();
 
-            //Inicio. Carga de opciones para el picker de tipo de usuario a logear
+            //Cargamos las opciones para el picker de tipo de usuario que ingresara a la app.
             pkTipoLogin.Items.Add("Cliente");
             pkTipoLogin.Items.Add("Barbero");
-            //Fin
 
-            //Inicio. Establece campo de contraseña con caracteres ocultos
-            txtContraseña.IsPassword = true;
-            //Fin
         }
 
-        //Inicio. Evento para el click del boton ingresar
+        /// <summary>
+        /// Metodo utilizado cuando se presiona 1 vez el btnIngresar. Ejecuta las instrucciones para
+        /// la validacion de usuarios y el ingreso a la aplicacion. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnIngresar_Clicked(object sender, EventArgs e)
         {
 
-            //Inicio. Evalua que los campos de correo y contraseña no esten vacios
+            #region Evaluar que los campos de correo y contraseña no esten vacios
             if (string.IsNullOrEmpty(txtCorreo.Text))
             {
                 await DisplayAlert("Error", "Debe ingresar un correo", "Aceptar");
@@ -43,66 +45,145 @@ namespace Barber_Phone.Views
                 txtContraseña.Focus();
                 return;
             }
-            //Fin. Evalua que los campos de correo y contraseña no esten vacios
+            #endregion
 
+            ActivarDesactivarActivityIndicator(true);
 
-            
             try
             {
-                DCliente dCliente = new DCliente();
-                var res = await dCliente.GetClientes();//Obtiene datos de clientes desde la clase DCliente
+                //Evaluamos si el tipo de login seleccionado es cliente.
+                if (pkTipoLogin.SelectedIndex == 0)
+                {
+                    /*Obtenemos los datos del webservices en base al correo ingresado en el textbox
+                    y lo almacenamos en un array*/
+                    DCliente dCliente = new DCliente();
+                    var res = await dCliente.GetExisteCliente(txtCorreo.Text);
 
-                /*Inicio. Verifica datos de acceso obtenidos desde el usuario*/
-                foreach (var item in res)
-                {                 
-                    if (item.Correo == txtCorreo.Text)
+                    /*Verifica si hay 0 objetos en el array res y de ser asi muestra una alerta en
+                   pantalla de usuario no registrado*/
+                    if (res.Count() == 0)
                     {
-                        if (item.Contraseña == txtContraseña.Text)
+                        ActivarDesactivarActivityIndicator(false);
+                        await DisplayAlert("Error", "Este correo no esta registrado", "Aceptar");
+                        txtCorreo.Text = "";
+                        txtContraseña.Text = "";
+                        txtCorreo.Focus();
+                        return;
+                    }
+
+                    /*Evaluamos el array res para verificar el correo y la contraseña coinciden con los ingresados
+                    en los textbox*/
+                    foreach (var item in res)
+                    {
+                        if (item.Correo == txtCorreo.Text)
                         {
-                            lblRespuesta.Text = "Datos coinciden";                           
+                            if (item.Contraseña == txtContraseña.Text)
+                            {
+                                /*Esto tiene que ser cambiado con la instruccion
+                                para acceder al UI de cliente.*/
+                                lblRespuesta.Text = "Datos coinciden para cliente";
+                            }
+                            else
+                            {
+                                ActivarDesactivarActivityIndicator(false);
+                                await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
+                                txtContraseña.Text = "";
+                                txtContraseña.Focus();
+                                return;
+                            }
                         }
-                        else
+                    }
+
+                }//Evaluamos si el tipo de login seleccionado es barbero.                
+                else if (pkTipoLogin.SelectedIndex == 1)
+                {
+                    /*Obtenemos los datos del webservices en base al correo ingresado en el textbox
+                    y lo almacenamos en un array*/
+                    DBarbero dBarbero = new DBarbero();
+                    var res = await dBarbero.GetExisteBarbero(txtCorreo.Text);
+
+                    /*Verifica si hay 0 objetos en el array res y de ser asi muestra una alerta en
+                    pantalla de usuario no registrado*/
+                    if (res.Count() == 0)
+                    {
+                        ActivarDesactivarActivityIndicator(false);
+                        await DisplayAlert("Error", "Este correo no esta registrado", "Aceptar");
+                        txtCorreo.Text = "";
+                        txtContraseña.Text = "";
+                        txtCorreo.Focus();
+                        return;
+                    }
+
+                    /*Evaluamos el array res para verificar el correo y la contraseña coinciden con los ingresados
+                    en los textbox*/
+                    foreach (var item in res)
+                    {
+                        if (item.Correo == txtCorreo.Text)
                         {
-                            await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
-                            txtContraseña.Text = "";
-                            txtContraseña.Focus();
-                            return;
+                            if (item.Contraseña == txtContraseña.Text)
+                            {
+                                /*Esto tiene que ser cambiado con la instruccion
+                                para acceder al UI de barbero.*/
+                                lblRespuesta.Text = "Datos coinciden para barbero";
+                            }
+                            else
+                            {
+                                ActivarDesactivarActivityIndicator(false);
+                                await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
+                                txtContraseña.Text = "";
+                                txtContraseña.Focus();
+                                return;
+                            }
                         }
                     }
                 }
-
-                //Este ventana emergente hay que trabajarle, ya que no se debe activar cuando
-                //los datos del usuarios sean correctos
-                await DisplayAlert("Error", "Este correo no esta registrado", "Aceptar");
-                txtCorreo.Text = "";
-                txtContraseña.Text = "";
-                txtCorreo.Focus();
-                /*Fin. Verifica datos de acceso obtenidos desde el usuario*/
+                else
+                {
+                    ActivarDesactivarActivityIndicator(false);
+                    await DisplayAlert("Error", "Debe seleccionar el tipo de usuario", "Aceptar");
+                    //pkTipoLogin.Focus();
+                    return;
+                }
 
             }
-            catch (Exception e1)
+            catch (Exception)
             {
                 throw;
             }
-            
-           /* if (pkTipoLogin.SelectedItem.ToString() == "Cliente")
-            {
-                lblRespuesta.Text = "Bienvenido " + "Cliente";
-            }
-            if(pkTipoLogin.SelectedItem.ToString() == "Barbero")
-            {
-                lblRespuesta.Text = "Bienvenido  " + "Barbero";
-            }*/
-            /*else
-            {
-                lblRespuesta.Text = "error, debe seleccionar un tipo de usuario";
-            }*/
-            /*
-            lblRespuesta.Text = "Bienvenido Nuevo " + pkTipoLogin.SelectedItem;
-            txtCorreo.Text = "";
-            txtContraseña.Text = "";*/
+
+            ActivarDesactivarActivityIndicator(false);
 
         }
-        //Fin. Evento para el click del boton ingresar
+
+        /// <summary>
+        /// Metodo para activar/desactivar el indicador de actividad y los botones en la pantalla de login. 
+        /// </summary>
+        /// <param name="aux"></param>
+        private void ActivarDesactivarActivityIndicator(bool aux)
+        {
+            if (aux)
+            {
+                waitActivityIndicator.IsRunning = true;
+                btnIngresar.IsEnabled = false;
+                btnRegistrar.IsEnabled = false;
+            }
+            else
+            {
+                btnRegistrar.IsEnabled = true;
+                btnIngresar.IsEnabled = true;
+                waitActivityIndicator.IsRunning = false;
+            }
+        }
+
+        /// <summary>
+        /// Metodo utilizado cuando se presiona 1 vez el btnIngresar. Ejecuta las instrucciones para
+        /// ir a la pagina de tipoRegistro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void btnRegistrar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new tipoRegistro());
+        }
     }
 }
