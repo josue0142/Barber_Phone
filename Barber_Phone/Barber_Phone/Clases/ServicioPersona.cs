@@ -7,13 +7,13 @@ namespace Barber_Phone.Clases
     public class ServicioPersona
     {
 
-        public List<Persona> ConsultarPersona()
+        public List<Cliente> ConsultarCliente()
         {
-            var lista = new List<Persona>();
+            var lista = new List<Cliente>();
 
-            lista.Add(new Persona() { Nombre = "Jefferson", apellido = "Villanueva", hora = "10:15 AM" });
-            lista.Add(new Persona() { Nombre = "Josue", apellido = "Jimenez", hora = "11:15 AM" });
-            lista.Add(new Persona() { Nombre = "Benjamin", apellido = "Guchi", hora = "10:45 AM" });
+            lista.Add(new Cliente() { Nombre = "Jefferson", Apellido = "Villanueva" });
+            lista.Add(new Cliente() { Nombre = "Josue", Apellido = "Jimenez"});
+            lista.Add(new Cliente() { Nombre = "Benjamin", Apellido = "Guchi" });
             return lista;
         }
 
