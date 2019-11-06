@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.tipoRegistro">
+             x:Class="Barber_Phone.Views.tipoRegistro"
+             NavigationPage.HasNavigationBar="false">
 
 
     <Grid>
@@ -40,7 +41,8 @@
                     CornerRadius="40"
                     BorderWidth="3.5"
                     TextColor="black"
-                    BackgroundColor="SeaShell"/>
+                    BackgroundColor="SeaShell"
+                    Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
                     x:Name="btnRegistrarb" 
@@ -53,7 +55,8 @@
                     BorderWidth="3.5"
                     TextColor="Black"
                     BackgroundColor="SeaShell"
-                    Margin="30,150,0,0"/>
+                    Margin="30,150,0,0"
+                    Clicked="btnRegistrarb_Clicked"/>
 
             </StackLayout>
 

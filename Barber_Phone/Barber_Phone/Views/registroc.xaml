@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.registroc">
+             x:Class="Barber_Phone.Views.registroc"
+             NavigationPage.HasNavigationBar="false">
 
     <Grid Padding="5">
 
@@ -20,7 +21,7 @@
         <StackLayout 
             Orientation="Vertical">
 
-            <Label Text="Formulario de registro para Barbero." 
+            <Label Text="Formulario de registro para Cliente." 
             Margin="10,10,0,0"
             FontSize="24"/>
 
