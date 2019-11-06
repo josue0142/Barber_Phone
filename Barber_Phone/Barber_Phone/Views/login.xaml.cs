@@ -71,26 +71,24 @@ namespace Barber_Phone.Views
                         return;
                     }
 
-                    /*Evaluamos el array res para verificar el correo y la contraseña coinciden con los ingresados
-                    en los textbox*/
+                    /*Evaluamos el array res para verificar si la contraseña coincide con la ingresada
+                     en el textbox*/
                     foreach (var item in res)
                     {
-                        if (item.Correo == txtCorreo.Text)
+                        if (item.Contraseña == txtContraseña.Text)
                         {
-                            if (item.Contraseña == txtContraseña.Text)
-                            {
-                                /*Esto tiene que ser cambiado con la instruccion
-                                para acceder al UI de cliente.*/
-                                lblRespuesta.Text = "Datos coinciden para cliente";
-                            }
-                            else
-                            {
-                                ActivarDesactivarActivityIndicator(false);
-                                await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
-                                txtContraseña.Text = "";
-                                txtContraseña.Focus();
-                                return;
-                            }
+                            goToMenuBarbero();
+                            /*Esto tiene que ser cambiado con la instruccion
+                            para acceder al UI de cliente.*/
+                            //lblRespuesta.Text = "Datos coinciden para cliente";
+                        }
+                        else
+                        {
+                            ActivarDesactivarActivityIndicator(false);
+                            await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
+                            txtContraseña.Text = "";
+                            txtContraseña.Focus();
+                            return;
                         }
                     }
 
@@ -114,26 +112,23 @@ namespace Barber_Phone.Views
                         return;
                     }
 
-                    /*Evaluamos el array res para verificar el correo y la contraseña coinciden con los ingresados
-                    en los textbox*/
+                    /*Evaluamos el array res para verificar si la contraseña coincide con la ingresada
+                    en el textbox*/
                     foreach (var item in res)
                     {
-                        if (item.Correo == txtCorreo.Text)
+                        if (item.Contraseña == txtContraseña.Text)
                         {
-                            if (item.Contraseña == txtContraseña.Text)
-                            {
-                                /*Esto tiene que ser cambiado con la instruccion
-                                para acceder al UI de barbero.*/
-                                lblRespuesta.Text = "Datos coinciden para barbero";
-                            }
-                            else
-                            {
-                                ActivarDesactivarActivityIndicator(false);
-                                await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
-                                txtContraseña.Text = "";
-                                txtContraseña.Focus();
-                                return;
-                            }
+                            /*Esto tiene que ser cambiado con la instruccion
+                            para acceder al UI de barbero.*/
+                            lblRespuesta.Text = "Datos coinciden para barbero";
+                        }
+                        else
+                        {
+                            ActivarDesactivarActivityIndicator(false);
+                            await DisplayAlert("Error", "Contraseña incorrecta", "Aceptar");
+                            txtContraseña.Text = "";
+                            txtContraseña.Focus();
+                            return;
                         }
                     }
                 }
@@ -184,6 +179,14 @@ namespace Barber_Phone.Views
         private async void btnRegistrar_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new tipoRegistro());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void goToMenuBarbero()
+        {
+            Navigation.PushAsync(new MenuBarbero());
         }
     }
 }
