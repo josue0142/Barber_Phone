@@ -120,7 +120,7 @@ namespace Barber_Phone.Views
                         {
                             /*Esto tiene que ser cambiado con la instruccion
                             para acceder al UI de barbero.*/
-                            lblRespuesta.Text = "Datos coinciden para barbero";
+                            //lblRespuesta.Text = "Datos coinciden para barbero";
                         }
                         else
                         {

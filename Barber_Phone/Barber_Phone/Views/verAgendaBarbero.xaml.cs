@@ -32,11 +32,20 @@ namespace Barber_Phone.Views
 
                 new Cita
                 {
-                    Cliente = "Cliente: Benjamin",
-                    Servicio = "Tipo de servicio: Cerquillo",
-                    Hora = "10:25",
+                    Cliente = "Cliente: Benjamin Libert",
+                    Servicio = "Tipo de servicio: Cerquillo y Barba",
+                    Hora = "11:30",
                     Fecha = "06/11/2019",
-                    Duracion = "15 minutos"
+                    Duracion = "25 minutos"
+
+                },
+                 new Cita
+                {
+                    Cliente = "Cliente: Jefferson Villanueva",
+                    Servicio = "Tipo de servicio: Corte sencillo",
+                    Hora = "10:40",
+                    Fecha = "06/11/2019",
+                    Duracion = "25 minutos"
 
                 }
 
