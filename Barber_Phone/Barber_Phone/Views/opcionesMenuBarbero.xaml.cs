@@ -30,12 +30,12 @@ namespace Barber_Phone.Views
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new PantallaItemTres());
                 App.Modificador.IsPresented = false;
-            };
+            };*/
             Item4.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new PantallaItemCuatro());
+                await App.Modificador.Detail.Navigation.PushAsync(new login());
                 App.Modificador.IsPresented = false;
-            };*/
+            };
 
         }
 

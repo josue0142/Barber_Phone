@@ -7,6 +7,7 @@
              x:Class="Barber_Phone.Views.tipoRegistro"
              NavigationPage.HasNavigationBar="false">
 
+
     <Grid>
 
         <Image 
@@ -27,14 +28,15 @@
                 FontAttributes="Bold"/>
 
             <StackLayout 
-                Orientation="Horizontal">
+                Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 
                 <Button 
+                    HorizontalOptions="FillAndExpand"
                     x:Name="btnRegistroc" 
                     Text="Cliente"
                     FontSize="18"
                     BorderColor="SeaShell"
-                    Margin="30,150,0,0"
+                    Margin="0,150,0,0"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
@@ -44,7 +46,8 @@
                     Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
-                    x:Name="btnRegistrob" 
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="btnRegistrarb" 
                     Text="Barbero"
                     FontSize="18"
                     BorderColor="SeaShell"
@@ -54,8 +57,8 @@
                     BorderWidth="3.5"
                     TextColor="Black"
                     BackgroundColor="SeaShell"
-                    Margin="30,150,0,0"
-                    Clicked="btnRegistrob_Clicked"/>
+                    Margin="0,150,0,0"
+                    Clicked="btnRegistrarb_Clicked"/>
 
             </StackLayout>
 
