@@ -138,5 +138,23 @@ namespace Barber_Phone.Datos
                     await DisplayAlert("Error", ex.ToString(), "Ok");
                     return;
                 }*/
+
+        public async void PostCliente(Cliente cliente)
+        {
+            HttpClient client = GetClient();
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostUsers/PostCliente.php";
+            string obj = "{ ";
+            obj += "     \"primer_Nombre\": "+cliente.Primer_Nombre+",";
+            obj += "     \"primer_Apellido\": "+cliente.Primer_Apellido+",";
+            obj += "     \"correo\": "+cliente.Correo+",";
+            obj += "     \"contraseña\": "+cliente.Contraseña+",";
+            obj += "     \"numero_Telefono\": "+cliente.Numero_Telefono+",";
+            obj += "  }";
+            var content = new StringContent(obj);
+            /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos del usuario en base al 
+            correo recibido por parametro*/
+            await client.PostAsync(URL,content);
+        }
+
     }
 }

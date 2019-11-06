@@ -38,5 +38,14 @@ namespace Barber_Phone.Views
             };
 
         }
+
+        /// <summary>
+        /// Bloqueamos/Desbloqueamos el boton fisico de retroceso. 
+        /// True Bloqueado, False Desbloqueado
+        /// </summary>
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
+        }
     }
 }

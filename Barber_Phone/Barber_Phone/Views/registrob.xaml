@@ -7,10 +7,8 @@
              x:Class="Barber_Phone.Views.registrob"
              NavigationPage.HasNavigationBar="false">
 
-
-
     <Grid Padding="5">
-        
+
         <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
@@ -23,62 +21,60 @@
         <StackLayout 
             Orientation="Vertical">
 
-            <Label Text="Formulario de registro para Barbero." 
-            Margin="10,10,0,0"
-            FontSize="24"/>
-  
-                <Entry
+            <Label 
+                Text="Formulario de registro para Barbero." 
+                Margin="10,10,0,0"
+                FontSize="24"/>
+
+            <Entry
                     x:Name="txtnombrerb"
                     Placeholder=" Primer Nombre"
                     Margin="5,35,5,5"
                     HorizontalTextAlignment="Center"/>
 
-                <Entry
+            <Entry
                     x:Name="txtapellidob"
                     Placeholder="Primer Apellido"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
-                <Entry
+            <Entry
                     x:Name="txtcorreob"
                     Placeholder="Correo Electronico"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
-                <Entry
+            <Entry
                     x:Name="txtcontraseñab"
                     Placeholder="Contraseña"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
-                <Entry
+            <Entry
                     x:Name="txttelefono"
                     Placeholder="Numero de Celular"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
                     Keyboard="Numeric"/>
-           
-                <SearchBar Placeholder="Ingrese barberia"
+
+            <SearchBar 
+                    Placeholder="Ingrese barberia"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
-                
-                
-                <Button Text="Registrar"
-                        Margin="15,95,15,5"
-                        BackgroundColor="SeaShell"
-                        FontSize="18"
-                        BorderWidth="5"
-                        WidthRequest="15"
-                        HeightRequest="50"
-                        CornerRadius="50"/>
-                
-                
-                
-                
-                
+
+
+            <Button 
+                    Text="Registrar"
+                    Margin="15,95,15,5"
+                    BackgroundColor="SeaShell"
+                    FontSize="18"
+                    BorderWidth="5"
+                    WidthRequest="15"
+                    HeightRequest="50"
+                    CornerRadius="50"/>
+
         </StackLayout>
 
     </Grid>
-        
- 
+
 </ContentPage>
