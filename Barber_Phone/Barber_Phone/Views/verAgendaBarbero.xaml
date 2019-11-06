@@ -7,10 +7,47 @@
              x:Class="Barber_Phone.Views.verAgendaBarbero"
              Title="verAgendaBarbero">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+
+            <Image 
+            Source="Logu.png" 
+            Aspect="AspectFit" />
+
+            <BoxView
+                Color="White"
+                Opacity="0.8"/>
+
+
+
+            <StackLayout>
+            <Label Text="Agenda barbero"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Title"/>
+
+                <ListView x:Name="lstPersonas" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <StackLayout>
+                                    <Label Text="{Binding nombre}"
+                                     />
+                                    <Label Text="{Binding apellido}"
+                                     />
+                                    <Label Text="{Binding hora}"
+                                     />
+                                </StackLayout>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+              
+            </StackLayout>
+            
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

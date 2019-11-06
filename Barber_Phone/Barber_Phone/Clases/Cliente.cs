@@ -17,5 +17,7 @@ namespace Barber_Phone.Clases
         public string Correo { get => correo; set => correo = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public string Telefono { get => telefono; set => telefono = value; }
+
+        
     }
 }

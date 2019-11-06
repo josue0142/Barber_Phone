@@ -6,10 +6,22 @@
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.inicioBarbero">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <Grid>
+            <Image 
+            Source="Logu.png" 
+            Aspect="AspectFit" />
+
+            <BoxView
+                Color="White"
+                Opacity="0.2"/>
+
+            <StackLayout>
+                <Label Text="Bienvenido a BarberPhone!"
+                       HorizontalOptions="Center"
+                       FontSize="Title"
+                       FontAttributes="Bold"/>
+             </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
