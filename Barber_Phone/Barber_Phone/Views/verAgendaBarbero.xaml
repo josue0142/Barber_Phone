@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.verAgendaBarbero"
-             Title="verAgendaBarbero">
+             x:Class="Barber_Phone.Views.verAgendaBarbero" 
+             Title="Ver Agenda">
     <ContentPage.Content>
         <Grid>
 
@@ -17,36 +17,28 @@
                 Color="White"
                 Opacity="0.8"/>
 
-
-
             <StackLayout>
-            <Label Text="Agenda barbero"
-                HorizontalOptions="CenterAndExpand" 
-                   FontSize="Title"/>
-
-                <ListView x:Name="lstPersonas" HasUnevenRows="True">
+                <Label Text ="Agenda Barbero"
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                       />
+                <ListView x:Name="MainListView"
+                          HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-
-                                <StackLayout>
-                                    <Label Text="{Binding nombre}"
-                                     />
-                                    <Label Text="{Binding apellido}"
-                                     />
-                                    <Label Text="{Binding hora}"
-                                     />
-                                </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="10">
+                                <Label Text="{Binding Cliente}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Servicio}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Hora}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Duracion}" FontSize="18" FontAttributes="Bold"/>
+                            </StackLayout>
                             </ViewCell>
-                            
                         </DataTemplate>
-                        
                     </ListView.ItemTemplate>
-                    
-                </ListView>
-              
+                    </ListView>
             </StackLayout>
-            
             
         </Grid>
     </ContentPage.Content>

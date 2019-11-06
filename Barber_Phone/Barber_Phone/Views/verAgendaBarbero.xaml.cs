@@ -15,9 +15,35 @@ namespace Barber_Phone.Views
     {
         public verAgendaBarbero()
         {
-            InitializeComponent(); 
-            ObservableCollection<Cliente> listaPersona = new ObservableCollection<Cliente>(new ServicioPersona().ConsultarPersona());
-            lstPersonas.ItemsSource = listaPersonas;
+            InitializeComponent();
+
+
+            MainListView.ItemsSource = new List<Cita>
+            {
+                new Cita
+                {
+
+                    Cliente = "Cliente: Josue Jimenez",
+                    Servicio = "Tipo de servicio: Cerquillo",
+                    Hora = "Hora: 10:25",
+                    Fecha = "Fecha: 06/11/2019",
+                    Duracion = "Duracion: 15 minutos"
+                },
+
+                new Cita
+                {
+                    Cliente = "Cliente: Benjamin",
+                    Servicio = "Tipo de servicio: Cerquillo",
+                    Hora = "10:25",
+                    Fecha = "06/11/2019",
+                    Duracion = "15 minutos"
+
+                }
+
+
+
+            };
         }
+
     }
 }

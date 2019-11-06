@@ -8,10 +8,42 @@
              Title="opcionesMenuBarbero">
     <ContentPage.Content>
         <StackLayout>
-            <Button x:Name="Item1" Text="Item-1"/>
-            <Button x:Name="Item2" Text="Item-2"/>
-            <Button x:Name="Item3" Text="Item-3"/>
-            <Button x:Name="Item4" Text="Item-4"/>
+            <Button x:Name="Item1" Text="Ver Agenda" FontSize="18"
+                    BorderColor="SeaShell"
+                    Margin="15,15,0,0"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="black"
+                    BackgroundColor="SeaShell"/>
+            <Button x:Name="Item2" Text="Historial" FontSize="18"
+                    BorderColor="SeaShell"
+                    Margin="15,15,0,0"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="black"
+                    BackgroundColor="SeaShell"/>
+            <Button x:Name="Item3" Text="Configuración" FontSize="18"
+                    BorderColor="SeaShell"
+                    Margin="15,15,0,0"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="black"
+                    BackgroundColor="SeaShell"/>
+            <Button x:Name="Item4" Text="Cerrar Sesión" FontSize="18"
+                    BorderColor="SeaShell"
+                    Margin="15,15,0,0"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="black"
+                    BackgroundColor="SeaShell"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
