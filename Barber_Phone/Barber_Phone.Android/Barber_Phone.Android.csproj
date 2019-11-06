@@ -107,9 +107,6 @@
     <AndroidResource Include="Resources\drawable\Logu.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\crop.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\appicon.png" />
   </ItemGroup>
   <ItemGroup>

@@ -94,9 +94,7 @@
 
             </StackLayout>
 
-            <Label 
-                x:Name="lblRespuesta" 
-                Text="............"/>
+          
 
         </StackLayout>
 
