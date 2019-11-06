@@ -13,11 +13,46 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class verAgendaBarbero : ContentPage
     {
-        /*public verAgendaBarbero()
+        public verAgendaBarbero()
         {
-            InitializeComponent(); 
-            ObservableCollection<Cliente> listaPersona = new ObservableCollection<Cliente>(new ServicioPersona().ConsultarPersona());
-            lstPersonas.ItemsSource = listaPersonas;
-        }*/
+            InitializeComponent();
+
+
+            MainListView.ItemsSource = new List<Cita>
+            {
+                new Cita
+                {
+
+                    Cliente = "Cliente: Josue Jimenez",
+                    Servicio = "Tipo de servicio: Cerquillo",
+                    Hora = "Hora: 10:25",
+                    Fecha = "Fecha: 06/11/2019",
+                    Duracion = "Duracion: 15 minutos"
+                },
+
+                new Cita
+                {
+                    Cliente = "Cliente: Benjamin Libert",
+                    Servicio = "Tipo de servicio: Cerquillo y Barba",
+                    Hora = "11:30",
+                    Fecha = "06/11/2019",
+                    Duracion = "25 minutos"
+
+                },
+                 new Cita
+                {
+                    Cliente = "Cliente: Jefferson Villanueva",
+                    Servicio = "Tipo de servicio: Corte sencillo",
+                    Hora = "10:40",
+                    Fecha = "06/11/2019",
+                    Duracion = "25 minutos"
+
+                }
+
+
+
+            };
+        }
+
     }
 }
