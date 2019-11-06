@@ -13,11 +13,11 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class verAgendaBarbero : ContentPage
     {
-        public verAgendaBarbero()
+        /*public verAgendaBarbero()
         {
             InitializeComponent(); 
             ObservableCollection<Cliente> listaPersona = new ObservableCollection<Cliente>(new ServicioPersona().ConsultarPersona());
             lstPersonas.ItemsSource = listaPersonas;
-        }
+        }*/
     }
 }

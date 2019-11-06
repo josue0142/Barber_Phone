@@ -7,7 +7,7 @@ namespace Barber_Phone.Clases
     public class ServicioPersona
     {
 
-        public List<Cliente> ConsultarCliente()
+        /*public List<Cliente> ConsultarCliente()
         {
             var lista = new List<Cliente>();
 
@@ -15,12 +15,6 @@ namespace Barber_Phone.Clases
             lista.Add(new Cliente() { Nombre = "Josue", Apellido = "Jimenez"});
             lista.Add(new Cliente() { Nombre = "Benjamin", Apellido = "Guchi" });
             return lista;
-        }
-
-
-
-
-
-
+        }*/
     }
 }

@@ -7,7 +7,6 @@
              x:Class="Barber_Phone.Views.tipoRegistro"
              NavigationPage.HasNavigationBar="false">
 
-
     <Grid>
 
         <Image 
@@ -45,7 +44,7 @@
                     Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
-                    x:Name="btnRegistrarb" 
+                    x:Name="btnRegistrob" 
                     Text="Barbero"
                     FontSize="18"
                     BorderColor="SeaShell"
@@ -56,7 +55,7 @@
                     TextColor="Black"
                     BackgroundColor="SeaShell"
                     Margin="30,150,0,0"
-                    Clicked="btnRegistrarb_Clicked"/>
+                    Clicked="btnRegistrob_Clicked"/>
 
             </StackLayout>
 

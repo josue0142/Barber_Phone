@@ -21,9 +21,6 @@
 
         <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
 
-
-
-
         <StackLayout 
             Orientation="Vertical">
 
@@ -101,6 +98,5 @@
         </StackLayout>
 
     </Grid>
-
 
 </ContentPage>
