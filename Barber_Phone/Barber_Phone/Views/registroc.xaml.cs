@@ -38,7 +38,7 @@ namespace Barber_Phone.Views
             }
             #endregion
 
-            //ActivarDesactivarActivityIndicator(true);
+            ActivarDesactivarActivityIndicator(true);
 
             try
             {
@@ -62,7 +62,7 @@ namespace Barber_Phone.Views
                 #endregion
 
                 #region Validar contraseña
-                /*Validamos si los campos de contraseña y confirmacion de contraseña son iguales
+                //Validamos si los campos de contraseña y confirmacion de contraseña son iguales
                 if (txtcontraseñab.Text != txtcontraseñaconfb.Text)
                 {
                     ActivarDesactivarActivityIndicator(false);
@@ -76,6 +76,8 @@ namespace Barber_Phone.Views
 
                 
                 #region Enviar a la BD datos del Cliente
+                /*Creamos un objeto de la clase Cliente y almacenamos los valores de los campos
+                del formulario en los atributos del objeto.*/
                 Cliente cliente = new Cliente();
 
                 cliente.Primer_Nombre = txtnombrerb.Text;
@@ -84,17 +86,31 @@ namespace Barber_Phone.Views
                 cliente.Contraseña = txtcontraseñab.Text;
                 cliente.Numero_Telefono = txttelefono.Text;
 
-                dCliente.PostCliente(cliente);
+                var res2 = await dCliente.PostCliente(cliente);
 
-                //res = await dCliente.GetExisteCliente(txtcorreob.Text);
-
-                /*if (res.Count() != 0)
+                /*Verifica si hay 0 objetos en el array res2 y de ser asi muestra una alerta en
+                 pantalla error por que el usuario no fue registrado*/
+                if (res2.Count() == 0)
                 {
                     ActivarDesactivarActivityIndicator(false);
-                    await DisplayAlert("Exito", "Registro realizado con extio", "Aceptar");
+                    await DisplayAlert("Error", "Ops! Algo Fallo", "Aceptar");
                     goToLogin();
                     return;
-                }*/
+                }
+
+
+                /*Evaluamos el array res2 para verificar si el correo  coincide con el ingresada
+                 en el textbox y confirmamos que el registro fue realizado*/
+                foreach (var item in res2)
+                {
+                    if(item.Correo == txtcorreob.Text)
+                    {
+                        ActivarDesactivarActivityIndicator(false);
+                        await DisplayAlert("Exito", "Registro realizado con exito", "Aceptar");
+                        goToLogin();
+                        return;
+                    }
+                }
                 #endregion
 
             }
@@ -103,12 +119,12 @@ namespace Barber_Phone.Views
                 ActivarDesactivarActivityIndicator(false);
                 throw;
             }
-            ActivarDesactivarActivityIndicator(false);
 
         }
 
         /// <summary>
-        /// Metodo para activar/desactivar el indicador de actividad y los botones en la pantalla.
+        /// Metodo para activar/desactivar el indicador de actividad, los botones en la pantalla y los campos
+        /// del formulario.
         /// true = activar, false = desactivar
         /// </summary>
         /// <param name="aux"></param>
@@ -118,14 +134,29 @@ namespace Barber_Phone.Views
             {
                 waitActivityIndicator.IsRunning = true;
                 btnRegistrar.IsEnabled = false;
+                txtnombrerb.IsEnabled = false;
+                txtapellidob.IsEnabled = false;
+                txtcorreob.IsEnabled = false;
+                txtcontraseñab.IsEnabled = false;
+                txtcontraseñaconfb.IsEnabled = false;
+                txttelefono.IsEnabled = false;
             }
             else
             {
+                txtnombrerb.IsEnabled = true;
+                txtapellidob.IsEnabled = true;
+                txtcorreob.IsEnabled = true;
+                txtcontraseñab.IsEnabled = true;
+                txtcontraseñaconfb.IsEnabled = true;
+                txttelefono.IsEnabled = true;
                 btnRegistrar.IsEnabled = true;
                 waitActivityIndicator.IsRunning = false;
             }
         }
 
+        /// <summary>
+        /// Devuelve al usuario a la pantalla de login
+        /// </summary>
         private void goToLogin()
         {
             Navigation.PushAsync(new login());

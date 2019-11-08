@@ -11,14 +11,14 @@
 
         <Image 
             Source="@drawable/background.jpg" 
-            Aspect="AspectFill" />
+            Aspect="AspectFill"/>
 
         <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.9" />
 
 
-        <StackLayout 
+        <StackLayout
             Orientation="Vertical">
 
             <Label 
@@ -30,34 +30,39 @@
                 x:Name="waitActivityIndicator"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
-            
+
             <Entry
                     x:Name="txtnombrerb"
                     Placeholder="Primer Nombre"
                     Margin="5,35,5,5"
-                    HorizontalTextAlignment="Center"/>
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Text"/>
 
             <Entry
                     x:Name="txtapellidob"
                     Placeholder="Primer Apellido"
                     Margin="5,5,5,5"
-                    HorizontalTextAlignment="Center"/>
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Text"/>
 
             <Entry
                     x:Name="txtcorreob"
                     Placeholder="Correo Electronico"
                     Margin="5,5,5,5"
-                    HorizontalTextAlignment="Center"/>
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Email"/>
 
             <Entry
                     x:Name="txtcontraseñab"
                     Placeholder="Contraseña"
+                    IsPassword="True"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
             <Entry
                     x:Name="txtcontraseñaconfb"
                     Placeholder="Confirme su contraseña"
+                    IsPassword="True"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 

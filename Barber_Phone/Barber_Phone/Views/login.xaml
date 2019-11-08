@@ -40,11 +40,11 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
 
-
             <Entry
                 x:Name="txtCorreo"
                 Placeholder="Ingrese correo"
-                Margin="25,10,25,10"/>
+                Margin="25,10,25,10"
+                Keyboard="Email"/>
 
             <Entry
                 x:Name="txtContraseña"
