@@ -47,7 +47,7 @@
 
                 <Button 
                     HorizontalOptions="FillAndExpand"
-                    x:Name="btnRegistrarb" 
+                    x:Name="btnRegistrob" 
                     Text="Barbero"
                     FontSize="18"
                     BorderColor="SeaShell"
@@ -58,7 +58,7 @@
                     TextColor="Black"
                     BackgroundColor="SeaShell"
                     Margin="0,150,0,0"
-                    Clicked="btnRegistrarb_Clicked"/>
+                    Clicked="btnRegistrob_Clicked"/>
 
             </StackLayout>
 
