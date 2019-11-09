@@ -7,14 +7,16 @@
              x:Class="Barber_Phone.Views.tipoRegistro"
              NavigationPage.HasNavigationBar="false">
 
+    <ScrollView>
 
-    <Grid>
+        <Grid
+        Padding="5">
 
-        <Image 
+            <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
 
-        <BoxView 
+            <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.9" />
 
@@ -63,7 +65,9 @@
             </StackLayout>
 
         </StackLayout>
-
-    </Grid>
-
+        
+        </Grid>
+        
+    </ScrollView>
+    
 </ContentPage>

@@ -77,7 +77,7 @@ namespace Barber_Phone.Views
                     {
                         if (item.Contraseña == txtContraseña.Text)
                         {
-                            goToMenuBarbero();
+                            goToMenuCliente();
                             /*Esto tiene que ser cambiado con la instruccion
                             para acceder al UI de cliente.*/
                             //lblRespuesta.Text = "Datos coinciden para cliente";
@@ -188,6 +188,14 @@ namespace Barber_Phone.Views
         private void goToMenuBarbero()
         {
             Navigation.PushAsync(new MenuBarbero());
+        }
+
+        /// <summary>
+        /// Metodo para acceder a la interfaz de Barbero
+        /// </summary>
+        private void goToMenuCliente()
+        {
+            Navigation.PushAsync(new MenuCliente());
         }
     }
 }

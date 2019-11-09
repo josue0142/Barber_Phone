@@ -7,73 +7,75 @@
              x:Class="Barber_Phone.Views.registroc"
              NavigationPage.HasNavigationBar="false">
 
-    <Grid Padding="5">
+    <ScrollView>
+        
+        <Grid Padding="5">
 
-        <Image 
+            <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill"/>
 
-        <BoxView 
+            <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.9" />
 
 
-        <StackLayout
+            <StackLayout
             Orientation="Vertical">
 
-            <Label 
+                <Label 
                 Text="Formulario de registro para Cliente." 
                 Margin="10,10,0,0"
                 FontSize="24"/>
 
-            <ActivityIndicator
+                <ActivityIndicator
                 x:Name="waitActivityIndicator"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
 
-            <Entry
+                <Entry
                     x:Name="txtnombrerb"
                     Placeholder="Primer Nombre"
                     Margin="5,35,5,5"
                     HorizontalTextAlignment="Center"
                     Keyboard="Text"/>
 
-            <Entry
+                <Entry
                     x:Name="txtapellidob"
                     Placeholder="Primer Apellido"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
                     Keyboard="Text"/>
 
-            <Entry
+                <Entry
                     x:Name="txtcorreob"
                     Placeholder="Correo Electronico"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
                     Keyboard="Email"/>
 
-            <Entry
+                <Entry
                     x:Name="txtcontraseñab"
                     Placeholder="Contraseña"
                     IsPassword="True"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
-            <Entry
+                <Entry
                     x:Name="txtcontraseñaconfb"
                     Placeholder="Confirme su contraseña"
                     IsPassword="True"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"/>
 
-            <Entry
+                <Entry
                     x:Name="txttelefono"
                     Placeholder="Numero de Celular"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
                     Keyboard="Numeric"/>
 
-            <Button 
+                <Button 
                 x:Name="btnRegistrar"
                 Text="Registrar"
                 Margin="15,95,15,5"
@@ -85,8 +87,10 @@
                 CornerRadius="50"
                 Clicked="btnRegistrar_Clicked"/>
 
-        </StackLayout>
-        
-    </Grid>
-    
+            </StackLayout>
+
+        </Grid>
+
+    </ScrollView>
+
 </ContentPage>

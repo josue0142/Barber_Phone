@@ -55,20 +55,32 @@ namespace Barber_Phone.Datos
             return Enumerable.Empty<Barbero>();
         }
 
-        /*public async Task<IEnumerable<Barbero>> VerificarBarberoLogin(string correo, string contraseña)
+        /// <summary>
+        /// Metodo para enviar los datos del barbero que realiza un registro en la aplicacion. 
+        /// recibe como parametro un objeto barbero con los datos del barbero que desea registrarse. 
+        /// </summary>
+        /// <param name="barbero"></param>
+        /// <returns></returns>
+        public async void PostBarbero(Barbero barbero)
         {
-            string uri = "https://bookshop2.000webhostapp.com/WebServicesXamarin/barberos.php";
-            var content = new StringContent("{\"correo:\":\"" + correo + "\",\"contraseña:\":\"" + contraseña + "\"}");
+
             HttpClient client = GetClient();
-            var res = await client.PostAsync(uri, content);
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostUsers/PostBarbero.php";
 
-            if (res.IsSuccessStatusCode)
-            {
-                string result = await res.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<IEnumerable<Barbero>>(result);
+            //Creamos una tupla con los datos del barbero y lo almacenamos en la variable content 
+            var content = new FormUrlEncodedContent(new[] {
+                new KeyValuePair<string, string>("primer_Nombre", barbero.Primer_Nombre),
+                new KeyValuePair<string, string>("primer_Apellido", barbero.Primer_Apellido),
+                new KeyValuePair<string, string>("correo", barbero.Correo),
+                new KeyValuePair<string, string>("contraseña", barbero.Contraseña),
+                new KeyValuePair<string, string>("numero_Telefono",barbero.Numero_Telefono),
+                new KeyValuePair<string, string>("barberia",barbero.Barberia),
             }
+            );
 
-            return Enumerable.Empty<Barbero>();
-        }*/
+            /*Consumimos el webservices alojado en la URL, enviamos
+             * mediante el metodo PostAsync los datos del barbero*/
+            await client.PostAsync(URL, content);
+        }
     }
 }
