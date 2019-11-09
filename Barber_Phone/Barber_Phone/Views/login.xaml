@@ -5,63 +5,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.login"
-             NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
+             NavigationPage.HasNavigationBar="false">
+    <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
-
-    <Grid 
+    <ScrollView>
+        <Grid 
         Padding="5">
 
-        <Image 
+            <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
 
-        <BoxView 
+            <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.7" />
 
-        <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
-
-        <StackLayout 
+            <StackLayout 
             Orientation="Vertical">
 
-            <!--<Label 
-            Text="Log-In" 
-            FontSize="22" 
-            HorizontalOptions="Center"
-            FontAttributes="Italic"
-            Margin="0,85,0,50"/> -->
-
-            <Image 
+                <Image 
                 Source="logo2.png"
                 Margin="25"/>
 
-            <ActivityIndicator
+                <ActivityIndicator
                 x:Name="waitActivityIndicator"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
 
-            <Entry
+                <Entry
                 x:Name="txtCorreo"
                 Placeholder="Ingrese correo"
                 Margin="25,10,25,10"
                 Keyboard="Email"/>
 
-            <Entry
+                <Entry
                 x:Name="txtContraseña"
                 Placeholder="Contraseña"
                 IsPassword="True"
                 Margin="25,10,25,20"/>
 
-            <Picker
+                <Picker
                 x:Name="pkTipoLogin"
                 Margin="35,0,35,40"
                 Title="Seleccione el tipo de ingreso"
                 FontSize="20"/>
 
-            <StackLayout 
+                <StackLayout 
                 Orientation="Horizontal">
 
-                <Button 
+                    <Button 
                     x:Name="btnIngresar" 
                     Text="Ingresar"
                     FontSize="18"
@@ -75,7 +67,7 @@
                     BackgroundColor="SeaShell"
                     Clicked="btnIngresar_Clicked"/>
 
-                <Button 
+                    <Button 
                     x:Name="btnRegistrar" 
                     Text="Registrar"
                     FontSize="18"
@@ -89,12 +81,12 @@
                     Margin="15,15,0,0"
                     Clicked="btnRegistrar_Clicked"/>
 
+                </StackLayout>
+
             </StackLayout>
 
-          
-
-        </StackLayout>
-
-    </Grid>
-
+        </Grid>
+        
+    </ScrollView>
+    
 </ContentPage>
