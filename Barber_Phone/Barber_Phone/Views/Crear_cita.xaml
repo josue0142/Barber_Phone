@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Barber_Phone.Views.Crear_Cita">
+    <ContentPage.Content>
+        <Grid Padding="0.5">
+
+            <BoxView 
+            Color="LightGray" 
+            Opacity="0.8" />
+                     <StackLayout>
+                <Label Text="Crear Citas"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="24"
+                   FontAttributes="Bold"
+                       TextColor="Black"/>
+                <FlexLayout>
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#1690F4"/>
+                </FlexLayout>
+                <Label Text="Seleccione el servicio deseado:"
+                       FontSize="20"
+                       TextColor="Black"
+                       Margin="5"/>
+
+                <Picker Title="Servicios" HorizontalOptions="FillAndExpand" Margin="5,0,5,0">
+                    <Picker.Items>
+                        <x:String>Cerquillo</x:String>
+                        <x:String>Cejas</x:String>
+                        <x:String>Corte Sencillo</x:String>
+                        <x:String>Cerquillo y barba</x:String>
+                        <x:String>Corte y fake</x:String>
+                        <x:String>Afeitada</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Seleccione una hora:"
+                       FontSize="20"
+                       TextColor="Black"
+                       Margin="5"/>
+                <Picker Title="Hora" HorizontalOptions="FillAndExpand"  Margin="5,0,5,0">
+                    <Picker.Items>
+                        <x:String>10:00 AM</x:String>
+                        <x:String>10:30 AM</x:String>
+                        <x:String>11:00 AM</x:String>
+                        <x:String>11:30 AM</x:String>
+                        <x:String>12:00 PM</x:String>
+                        <x:String>12:30 PM</x:String>
+                        <x:String>01:00 PM</x:String>
+                        <x:String>01:30 PM</x:String>
+                        <x:String>02:00 PM</x:String>
+                        <x:String>02:30 PM</x:String>
+                        <x:String>03:00 PM</x:String>
+                        <x:String>03:30 PM</x:String>
+                        <x:String>04:00 PM</x:String>
+                        <x:String>04:30 PM</x:String>
+                        <x:String>05:00 PM</x:String>
+                        <x:String>05:30 PM</x:String>
+                        <x:String>06:00 PM</x:String>
+                        <x:String>06:30 PM</x:String>
+                        <x:String>07:00 PM</x:String>
+                        <x:String>07:30 PM</x:String>
+                        <x:String>08:00 PM</x:String>
+                        <x:String>08:30 PM</x:String>
+                        <x:String>09:00 PM</x:String>
+                        <x:String>09:30 PM</x:String>
+                        <x:String>10:00 PM</x:String
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Seleccione una barberia:"
+                       FontSize="20"
+                       TextColor="Black"
+                       Margin="5"/>
+                <Picker Title="Barberias" HorizontalOptions="FillAndExpand" AnchorY="50" Margin="5,0,5,0">
+                    <Picker.Items>
+                        <x:String>D'Jeff styles</x:String>
+                        <x:String>JJ Bshop</x:String>
+                        <x:String>benjiBarberP.</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button 
+                    x:Name="btncrear_cita" 
+                    Text="Crear Cita"
+                    FontSize="18"
+                    BorderColor="LightBlue"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="Black"
+                    BackgroundColor="WhiteSmoke"
+                    Margin="15,50,15,0"
+                    />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
