@@ -35,14 +35,14 @@
                     x:Name="btnRegistroc" 
                     Text="Cliente"
                     FontSize="18"
-                    BorderColor="SeaShell"
+                    BorderColor="LightBlue"
                     Margin="0,150,0,0"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
                     TextColor="black"
-                    BackgroundColor="SeaShell"
+                    BackgroundColor="White"
                     Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
@@ -50,13 +50,13 @@
                     x:Name="btnRegistrob" 
                     Text="Barbero"
                     FontSize="18"
-                    BorderColor="SeaShell"
+                    BorderColor="LightBlue"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
                     TextColor="Black"
-                    BackgroundColor="SeaShell"
+                    BackgroundColor="White"
                     Margin="0,150,0,0"
                     Clicked="btnRegistrob_Clicked"/>
 
