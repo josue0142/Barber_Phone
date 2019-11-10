@@ -25,7 +25,8 @@
                     BorderWidth="3.5"
                     TextColor="Black"
                     BackgroundColor="WhiteSmoke"/>
-            <Button x:Name="Item3" Text="Crear Citas" FontSize="18"
+
+            <Button x:Name="Item3" Text="Configuración" FontSize="18"
                     BorderColor="LightBlue"
                     WidthRequest="150"
                     HeightRequest="50"
@@ -33,15 +34,7 @@
                     BorderWidth="3.5"
                     TextColor="Black"
                     BackgroundColor="WhiteSmoke"/>
-            <Button x:Name="Item4" Text="Configuración" FontSize="18"
-                    BorderColor="LightBlue"
-                    WidthRequest="150"
-                    HeightRequest="50"
-                    CornerRadius="40"
-                    BorderWidth="3.5"
-                    TextColor="Black"
-                    BackgroundColor="WhiteSmoke"/>
-            <Button x:Name="Item5" Text="Cerrar Sesión" FontSize="18"
+            <Button x:Name="Item4" Text="Cerrar Sesión" FontSize="18"
                     BorderColor="LightBlue"
                     WidthRequest="150"
                     HeightRequest="50"
