@@ -67,7 +67,7 @@
                         <x:String>08:30 PM</x:String>
                         <x:String>09:00 PM</x:String>
                         <x:String>09:30 PM</x:String>
-                        <x:String>10:00 PM</x:String
+                        <x:String>10:00 PM</x:String>
                     </Picker.Items>
                 </Picker>
 
