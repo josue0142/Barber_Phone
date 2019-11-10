@@ -34,7 +34,7 @@ namespace Barber_Phone.Droid
         }
     }
 
-    public class NotificationService
+    /*public class NotificationService
     {
         public string mensaje = "";
         public NotificationService()
@@ -50,5 +50,5 @@ namespace Barber_Phone.Droid
                 });
             })).Start();
         }
-    }
+    }*/
 }
