@@ -11,16 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class verAgendaBarbero : ContentPage
+    public partial class HistorialCliente : ContentPage
     {
-        public verAgendaBarbero()
+        public HistorialCliente()
         {
             InitializeComponent();
 
 
-            MainListView.ItemsSource = new List<Cita>
+            HistorialListView.ItemsSource = new List<Historial>
             {
-                new Cita
+                new Historial
                 {
 
                     Cliente = "Cliente: Josue Jimenez",
@@ -30,7 +30,7 @@ namespace Barber_Phone.Views
                     Duracion = "Duracion: 15 minutos"
                 },
 
-                new Cita
+                new Historial
                 {
                     Cliente = "Cliente: Benjamin Libert",
                     Servicio = "Tipo de servicio: Cerquillo y Barba",
@@ -39,7 +39,7 @@ namespace Barber_Phone.Views
                     Duracion = "25 minutos"
 
                 },
-                 new Cita
+                 new Historial
                 {
                     Cliente = "Cliente: Jefferson Villanueva",
                     Servicio = "Tipo de servicio: Corte sencillo",
