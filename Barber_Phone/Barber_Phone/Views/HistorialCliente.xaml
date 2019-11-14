@@ -4,8 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.verAgendaBarbero" 
-             Title="Ver Agenda">
+             x:Class="Barber_Phone.Views.HistorialCliente" 
+             Title="Historial"
+             NavigationPage.HasNavigationBar="false">
+    <!--Oculta la barra de navegacion superior creada
+             por navigationPage-->
     <ContentPage.Content>
         <Grid>
 
