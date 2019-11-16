@@ -8,24 +8,13 @@
              NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
 
-    <Grid 
-        Padding="5">
-
-        <Image 
-            Source="@drawable/background.jpg" 
-            Aspect="AspectFill" />
-
-        <BoxView 
-            Color="WhiteSmoke" 
-            Opacity="0.7" />
-
-        <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
+    <Grid>
 
         <StackLayout 
             Orientation="Vertical">
 
             <Image 
-                Source="Logu.png"
+                Source="LOGORD.png"
                 Margin="25"/>
 
             <ActivityIndicator
@@ -37,19 +26,22 @@
                 x:Name="txtCorreo"
                 Placeholder="Ingrese correo"
                 Margin="25,10,25,10"
-                Keyboard="Email"/>
+                Keyboard="Email"
+                PlaceholderColor="#D5C9B1"/>
 
             <Entry
                 x:Name="txtContraseña"
                 Placeholder="Contraseña"
                 IsPassword="True"
-                Margin="25,10,25,20"/>
+                Margin="25,10,25,20"
+                PlaceholderColor="#D5C9B1"/>
 
             <Picker
                 x:Name="pkTipoLogin"
                 Margin="35,0,35,40"
                 Title="Seleccione el tipo de ingreso"
-                FontSize="20"/>
+                FontSize="20"
+                TitleColor="#D5C9B1"/>
 
             <StackLayout 
                 Orientation="Horizontal">
@@ -58,27 +50,27 @@
                     x:Name="btnIngresar" 
                     Text="Ingresar"
                     FontSize="18"
-                    BorderColor="LightBlue"
+                    BorderColor="#D5C9B1"
                     Margin="15,15,0,0"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
-                    TextColor="black"
-                    BackgroundColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Clicked="btnIngresar_Clicked"/>
 
                 <Button 
                     x:Name="btnRegistrar" 
                     Text="Registrar"
                     FontSize="18"
-                    BorderColor="LightBlue"
+                    BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
-                    TextColor="Black"
-                    BackgroundColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Margin="15,15,15,0"
                     Clicked="btnRegistrar_Clicked"/>
 
