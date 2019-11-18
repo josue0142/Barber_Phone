@@ -8,7 +8,7 @@
              NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
 
-    <Grid>
+    <Grid Padding="5">
 
         <StackLayout 
             Orientation="Vertical">
@@ -19,8 +19,9 @@
 
             <ActivityIndicator
                 x:Name="waitActivityIndicator"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Color="#5F968E"/>
 
             <Entry
                 x:Name="txtCorreo"
