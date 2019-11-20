@@ -10,19 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Crear_Cita : ContentPage
+    public partial class AcercaDe : ContentPage
     {
-        public Crear_Cita()
+        public AcercaDe()
         {
             InitializeComponent();
-
-
-            }
-
-         async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Aviso", "Cita creada satisfactoriamente ", "OK");
-
         }
     }
 }
