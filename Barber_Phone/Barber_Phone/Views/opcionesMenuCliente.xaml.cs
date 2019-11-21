@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class opcionesMenuCliente : ContentPage
     {
-        public opcionesMenuCliente()
+        public opcionesMenuCliente(Cliente cliente)
         {
             InitializeComponent();
 
@@ -23,7 +24,7 @@ namespace Barber_Phone.Views
             };*/
             Item2.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new Crear_Cita());
+                await App.Modificador.Detail.Navigation.PushAsync(new Crear_Cita(cliente));
                 App.Modificador.IsPresented = false;
             };
             /*Item3.Clicked += async (sender, e) =>
@@ -31,11 +32,11 @@ namespace Barber_Phone.Views
                 await App.Modificador.Detail.Navigation.PushAsync(new PantallaItemTres());
                 App.Modificador.IsPresented = false;
             };*/
-            /*Item4.Clicked += async (sender, e) =>
+            Item4.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new login());
+                await App.Modificador.Detail.Navigation.PushAsync(new HistorialCliente(cliente));
                 App.Modificador.IsPresented = false;
-            };*/
+            };
             Item5.Clicked += async (sender, e) =>
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new Configuracion());

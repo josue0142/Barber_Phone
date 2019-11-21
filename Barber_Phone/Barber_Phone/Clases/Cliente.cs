@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Barber_Phone.Clases
 {
-    class Cliente
+    public class Cliente
     {
         private string primer_Nombre;
         private string primer_Apellido;
