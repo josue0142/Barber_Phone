@@ -34,7 +34,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Vertical" Margin="10">
-                                    <Label Text="{Binding Cliente}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Barbero}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Barberia}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Servicio}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Hora}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
