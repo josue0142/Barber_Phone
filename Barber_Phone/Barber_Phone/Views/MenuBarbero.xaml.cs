@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,12 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuBarbero : MasterDetailPage
     {
-        public MenuBarbero()
+        public MenuBarbero(Barbero barbero)
         {
             InitializeComponent();
 
             //Definimos nuestra pantalla Master
-            Master = new opcionesMenuBarbero();
+            Master = new opcionesMenuBarbero(barbero);
             //Definimos nuestra pantalla Detail
             Detail = new NavigationPage(new inicioBarbero());
 

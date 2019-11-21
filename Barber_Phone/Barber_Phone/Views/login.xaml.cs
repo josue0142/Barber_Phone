@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Barber_Phone.Datos;
 using System.Collections;
+using Barber_Phone.Clases;
 
 namespace Barber_Phone.Views
 {
@@ -77,10 +78,9 @@ namespace Barber_Phone.Views
                     {
                         if (item.Contraseña == txtContraseña.Text)
                         {
-                            goToMenuCliente();
-                            /*Esto tiene que ser cambiado con la instruccion
-                            para acceder al UI de cliente.*/
-                            //lblRespuesta.Text = "Datos coinciden para cliente";
+                            goToMenuCliente(item);
+                            //enviamos el objeto cliente (item) para se utilziado en la carga de datos
+                            //posteriores en la interfaz, algo parecido a crear una sesion. 
                         }
                         else
                         {
@@ -118,10 +118,9 @@ namespace Barber_Phone.Views
                     {
                         if (item.Contraseña == txtContraseña.Text)
                         {
-                            goToMenuBarbero();
-                            /*Esto tiene que ser cambiado con la instruccion
-                            para acceder al UI de barbero.*/
-                            //lblRespuesta.Text = "Datos coinciden para barbero";
+                            goToMenuBarbero(item);
+                            //enviamos el objeto barbero (item) para se utilziado en la carga de datos
+                            //posteriores en la interfaz, algo parecido a crear una sesion. 
                         }
                         else
                         {
@@ -144,6 +143,7 @@ namespace Barber_Phone.Views
             }
             catch (Exception)
             {
+                ActivarDesactivarActivityIndicator(false);
                 throw;
             }
 
@@ -182,20 +182,24 @@ namespace Barber_Phone.Views
             await Navigation.PushAsync(new tipoRegistro());
         }
 
-       /// <summary>
-       /// Metodo para acceder a la interfaz de Barbero
-       /// </summary>
-        private void goToMenuBarbero()
+        /// <summary>
+        /// Metodo para acceder a la interfaz de Barbero.
+        ///Enviamos un objeto cliente para crear la sesion durante la utilizacion de la
+        /// aplicacion por parte del usuario 
+        /// </summary>
+        private void goToMenuBarbero(Barbero  barbero)
         {
-            Navigation.PushAsync(new MenuBarbero());
+            Navigation.PushAsync(new MenuBarbero(barbero));
         }
 
         /// <summary>
-        /// Metodo para acceder a la interfaz de Barbero
+        /// Metodo para acceder a la interfaz de cliente.
+        /// Enviamos un objeto cliente para crear la sesion durante la utilizacion de la
+        /// aplicacion por parte del usuario 
         /// </summary>
-        private void goToMenuCliente()
+        private void goToMenuCliente(Cliente cliente)
         {
-            Navigation.PushAsync(new MenuCliente());
+            Navigation.PushAsync(new MenuCliente(cliente));
         }
     }
 }

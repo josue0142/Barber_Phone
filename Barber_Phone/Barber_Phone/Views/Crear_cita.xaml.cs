@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Crear_Cita : ContentPage
     {
-        public Crear_Cita()
+        public Crear_Cita(Cliente cliente)
         {
             InitializeComponent();
         }
