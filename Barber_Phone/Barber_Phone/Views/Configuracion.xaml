@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Barber_Phone.Views.Configuracion">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Configuración"
+                   HorizontalOptions="Center"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   />
+            <FlexLayout>
+                <BoxView VerticalOptions="FillAndExpand" 
+                         WidthRequest="1000"
+                         HeightRequest="5"
+                         Color="#5F968E"/>
+           </FlexLayout>
+            <Grid>
+            <Label Text="Activar/desactivar Notificaciones"
+                   HorizontalOptions="StartAndExpand"
+                   FontSize="18" 
+                   Margin="5"/>
+            <Switch IsToggled="False" OnColor="#5F968E" HorizontalOptions="EndAndExpand"
+                    />
+            </Grid>
+            <Label Text="Acerca De"
+                   HorizontalOptions="CenterAndExpand"
+                  FontSize="20">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -9,7 +9,7 @@
         <Grid Padding="0.5">
 
             <BoxView 
-            Color="LightGray" 
+            Color="White" 
             Opacity="0.8" />
                      <StackLayout>
                 <Label Text="Crear Citas"
@@ -19,8 +19,39 @@
                    FontAttributes="Bold"
                        TextColor="Black"/>
                 <FlexLayout>
-                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#1690F4"/>
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
                 </FlexLayout>
+
+                <Label Text="Seleccione su sector" FontSize="20"
+                       TextColor="Black"
+                       Margin="5"/>
+                <Picker Title="Sector" HorizontalOptions="FillAndExpand"  Margin="5,0,5,0" >
+                    <Picker.Items>
+                        <x:String>Los Mina</x:String>
+                        <x:String>Alma Rosa 1ra</x:String>
+                        <x:String>Alma Rosa 2da</x:String>
+                        <x:String>Los tres Brazos</x:String>
+                        <x:String>Catanga</x:String>
+                        <x:String>Venezuela</x:String>
+                        <x:String>Mandinga</x:String>
+                        <x:String>Sabana Perdida</x:String>
+                        <x:String>Sabana Larga</x:String>
+                        <x:String>Guerra</x:String>
+                        <x:String>Mojarra</x:String>
+                        <x:String>El Toro</x:String>
+                        <x:String>Los prados de san luis</x:String>
+                        <x:String>San Luis</x:String>
+                        <x:String>El Almirante</x:String>
+                        <x:String>Hainamosa</x:String>
+                        <x:String>El Perla</x:String>
+                        <x:String>Villa liberacion</x:String>
+                        <x:String>invivienda</x:String>
+                        <x:String>Los Pinos</x:String>
+                        <x:String>San Isidro</x:String>
+                        <x:String>Autopista de San Isidro</x:String>
+                    </Picker.Items>
+                </Picker>
+
                 <Label Text="Seleccione el servicio deseado:"
                        FontSize="20"
                        TextColor="Black"
@@ -70,7 +101,7 @@
                         <x:String>10:00 PM</x:String>
                     </Picker.Items>
                 </Picker>
-
+      
                 <Label Text="Seleccione una barberia:"
                        FontSize="20"
                        TextColor="Black"
@@ -86,14 +117,15 @@
                     x:Name="btncrear_cita" 
                     Text="Crear Cita"
                     FontSize="18"
-                    BorderColor="LightBlue"
+                    BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
-                    TextColor="Black"
-                    BackgroundColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Margin="15,50,15,0"
+                    Clicked="OnDisplayAlertButtonClicked"
                     />
             </StackLayout>
         </Grid>

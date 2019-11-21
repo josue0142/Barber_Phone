@@ -1,5 +1,4 @@
-﻿using Barber_Phone.Clases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,19 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Crear_Cita : ContentPage
+    public partial class Configuracion : ContentPage
     {
-        public Crear_Cita(Cliente cliente)
+        public Configuracion()
         {
             InitializeComponent();
+        }
 
-
-            }
-
-         async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await DisplayAlert("Aviso", "Cita creada satisfactoriamente ", "OK");
-
+            await Navigation.PushAsync(new AcercaDe());
         }
     }
 }
