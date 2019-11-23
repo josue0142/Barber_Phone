@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.LocalNotifications;
+using System.Threading;
+using Xamarin.Forms;
 
 namespace Barber_Phone.Droid
 {
@@ -30,4 +33,22 @@ namespace Barber_Phone.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
+    /*public class NotificationService
+    {
+        public string mensaje = "";
+        public NotificationService()
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+                Thread.CurrentThread.Name = "notificationservice";
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+                {
+                    CrossLocalNotifications.Current.Show("Nueva Cita", "Un usuario ha agregado una cita en tu barberia.");
+                    return true;
+                });
+            })).Start();
+        }
+    }*/
 }

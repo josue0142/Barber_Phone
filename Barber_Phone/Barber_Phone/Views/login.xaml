@@ -8,58 +8,41 @@
              NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
 
-    <Grid 
-        Padding="5">
-
-        <Image 
-            Source="@drawable/background.jpg" 
-            Aspect="AspectFill" />
-
-        <BoxView 
-            Color="WhiteSmoke" 
-            Opacity="0.7" />
-
-        <!-- <Image Source="@drawable/logo.png" Opacity="0.5" /> -->
-
-
-
+    <Grid Padding="5">
 
         <StackLayout 
             Orientation="Vertical">
 
-            <!--<Label 
-            Text="Log-In" 
-            FontSize="22" 
-            HorizontalOptions="Center"
-            FontAttributes="Italic"
-            Margin="0,85,0,50"/> -->
-
             <Image 
-                Source="logo2.png"
+                Source="LOGORD.png"
                 Margin="25"/>
 
             <ActivityIndicator
                 x:Name="waitActivityIndicator"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"/>
-
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Color="#5F968E"/>
 
             <Entry
                 x:Name="txtCorreo"
                 Placeholder="Ingrese correo"
-                Margin="25,10,25,10"/>
+                Margin="25,10,25,10"
+                Keyboard="Email"
+                PlaceholderColor="#D5C9B1"/>
 
             <Entry
                 x:Name="txtContraseña"
                 Placeholder="Contraseña"
                 IsPassword="True"
-                Margin="25,10,25,20"/>
+                Margin="25,10,25,20"
+                PlaceholderColor="#D5C9B1"/>
 
             <Picker
                 x:Name="pkTipoLogin"
                 Margin="35,0,35,40"
                 Title="Seleccione el tipo de ingreso"
-                FontSize="20"/>
+                FontSize="20"
+                TitleColor="#D5C9B1"/>
 
             <StackLayout 
                 Orientation="Horizontal">
@@ -68,39 +51,36 @@
                     x:Name="btnIngresar" 
                     Text="Ingresar"
                     FontSize="18"
-                    BorderColor="SeaShell"
+                    BorderColor="#D5C9B1"
                     Margin="15,15,0,0"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
-                    TextColor="black"
-                    BackgroundColor="SeaShell"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Clicked="btnIngresar_Clicked"/>
 
                 <Button 
                     x:Name="btnRegistrar" 
                     Text="Registrar"
                     FontSize="18"
-                    BorderColor="SeaShell"
+                    BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
-                    TextColor="Black"
-                    BackgroundColor="SeaShell"
-                    Margin="15,15,0,0"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
+                    Margin="15,15,15,0"
                     Clicked="btnRegistrar_Clicked"/>
 
             </StackLayout>
 
-            <Label 
-                x:Name="lblRespuesta" 
-                Text="............"/>
+          
 
         </StackLayout>
 
     </Grid>
-
 
 </ContentPage>

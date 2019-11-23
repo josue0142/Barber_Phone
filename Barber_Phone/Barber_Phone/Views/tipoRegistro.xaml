@@ -4,16 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.tipoRegistro">
+             x:Class="Barber_Phone.Views.tipoRegistro"
+             NavigationPage.HasNavigationBar="false">
 
+    <ScrollView>
 
-    <Grid>
+        <Grid
+        Padding="5">
 
-        <Image 
+            <Image 
             Source="@drawable/background.jpg" 
             Aspect="AspectFill" />
 
-        <BoxView 
+            <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.9" />
 
@@ -27,38 +30,44 @@
                 FontAttributes="Bold"/>
 
             <StackLayout 
-                Orientation="Horizontal">
+                Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 
                 <Button 
+                    HorizontalOptions="FillAndExpand"
                     x:Name="btnRegistroc" 
                     Text="Cliente"
                     FontSize="18"
-                    BorderColor="SeaShell"
-                    Margin="30,150,0,0"
+                    BorderColor="LightBlue"
+                    Margin="0,150,0,0"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
                     TextColor="black"
-                    BackgroundColor="SeaShell"/>
+                    BackgroundColor="White"
+                    Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
-                    x:Name="btnRegistrarb" 
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="btnRegistrob" 
                     Text="Barbero"
                     FontSize="18"
-                    BorderColor="SeaShell"
+                    BorderColor="LightBlue"
                     WidthRequest="150"
                     HeightRequest="50"
                     CornerRadius="40"
                     BorderWidth="3.5"
                     TextColor="Black"
-                    BackgroundColor="SeaShell"
-                    Margin="30,150,0,0"/>
+                    BackgroundColor="White"
+                    Margin="0,150,0,0"
+                    Clicked="btnRegistrob_Clicked"/>
 
             </StackLayout>
 
         </StackLayout>
-
-    </Grid>
-
+        
+        </Grid>
+        
+    </ScrollView>
+    
 </ContentPage>

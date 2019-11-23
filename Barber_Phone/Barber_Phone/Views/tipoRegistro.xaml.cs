@@ -16,5 +16,15 @@ namespace Barber_Phone.Views
         {
             InitializeComponent();
         }
+
+        private async void btnRegistroc_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new registroc());
+        }
+
+        private async void btnRegistrob_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new registrob());
+        }
     }
 }
