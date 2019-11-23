@@ -22,11 +22,11 @@ namespace Barber_Phone.Views
                 await App.Modificador.Detail.Navigation.PushAsync(new verAgendaBarbero(barbero));
                 App.Modificador.IsPresented = false;
             };
-            /*Item2.Clicked += async (sender, e) =>
+            Item2.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new HistorialCliente(barbero));
+                await App.Modificador.Detail.Navigation.PushAsync(new HistorialBarbero(barbero));
                 App.Modificador.IsPresented = false;
-            };*/
+            };
             Item3.Clicked += async (sender, e) =>
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new Configuracion());

@@ -1,53 +1,52 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using Barber_Phone.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Barber_Phone.Clases;
-using Barber_Phone.Datos;
 
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class verAgendaBarbero : ContentPage
+    public partial class HistorialBarbero : ContentPage
     {
-        public verAgendaBarbero(Barbero barbero)
+        public HistorialBarbero(Barbero barbero)
         {
             InitializeComponent();
 
-            MostrarAgenda(barbero);
+            MostrarHistorial(barbero);
         }
 
         /// <summary>
-        /// Metodo para mostrar la agenda del barbero.
+        /// Metodo para mostrar el historial del cliente.
         /// </summary>
         /// <param name="barbero"></param>
-        private async void MostrarAgenda(Barbero barbero)
+        private async void MostrarHistorial(Barbero barbero)
         {
             try
             {
                 /*Obtenemos los datos del webservices en base al correo del barbero logeado
             y lo almacenamos en un array*/
                 DCita dCita = new DCita();
-                var res = await dCita.GetAgendaBarbero(barbero.Correo);
+                var res = await dCita.GetHistorialCitaBarbero(barbero.Correo);
 
                 /*Verifica si hay 0 objetos en el array res y de ser asi muestra una alerta en
-                      pantalla Agenda no disponible*/
+                      pantalla historial no disponible*/
                 if (res.Count() == 0)
                 {
-                    await DisplayAlert("Mensaje", "Agenda no disponible", "Aceptar");
+                    await DisplayAlert("Mensaje", "Historial no disponible", "Aceptar");
                     return;
                 }
 
                 //Creamos una lista para cargarla con los datos del array res
-                var agenda = new List<Cita>();
+                var historial = new List<Cita>();
                 foreach (var item in res)
                 {
-                    agenda.Add(new Cita
+                    historial.Add(new Cita
                     {
                         Cliente = "Cliente: " + item.Cliente,
                         Servicio = "Tipo de servicio: " + item.Servicio,
@@ -57,15 +56,15 @@ namespace Barber_Phone.Views
                     });
                 }
 
-                //Establecemos la variable agenda como la fuente de datos para
-                //el listview de la pantalla agenda
-                MainListView.ItemsSource = agenda;
+                //Establecemos la variable historial como la fuente de datos para
+                //el listview de la pantalla historial
+                HistorialListView.ItemsSource = historial;
 
             }
             catch (Exception)
             {
                 throw;
-            }
+            }   
         }
     }
 }

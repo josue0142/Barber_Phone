@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.HistorialCliente" 
+             x:Class="Barber_Phone.Views.HistorialBarbero"
              Title="Historial"
              NavigationPage.HasNavigationBar="false">
     <!--Oculta la barra de navegacion superior creada
@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <Grid>
 
-            <Image 
+            <Image  
             Source="Logu.png" 
             Aspect="AspectFit" />
 
@@ -34,8 +34,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Vertical" Margin="10">
-                                    <Label Text="{Binding Barbero}" FontSize="18" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Barberia}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Cliente}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Servicio}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Hora}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
@@ -57,11 +56,8 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                
+
             </StackLayout>
-
-
-
 
         </Grid>
     </ContentPage.Content>

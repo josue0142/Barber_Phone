@@ -4,11 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.HistorialCliente" 
-             Title="Historial"
-             NavigationPage.HasNavigationBar="false">
-    <!--Oculta la barra de navegacion superior creada
-             por navigationPage-->
+             x:Class="Barber_Phone.Views.verCita"
+             Title="Ver Cita">
     <ContentPage.Content>
         <Grid>
 
@@ -21,14 +18,11 @@
                 Opacity="0.8"/>
 
             <StackLayout>
-                <Label Text ="Historial"
+                <Label Text ="Ver Cita"
                        HorizontalOptions="Center"
                        FontSize="25"
                        />
-                <FlexLayout>
-                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#1690F4"/>
-                </FlexLayout>
-                <ListView x:Name="HistorialListView"
+                <ListView x:Name="MainListView"
                           HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -41,8 +35,8 @@
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Duracion}" FontSize="18" FontAttributes="Bold"/>
                                     <Button 
-                                        x:Name="btneliminar_historial" 
-                                        Text="Eliminar Historial"
+                                        x:Name="btneliminar_Cita" 
+                                        Text="Eliminar"
                                         FontSize="18"
                                         BorderColor="LightBlue"
                                         WidthRequest="150"
@@ -51,17 +45,14 @@
                                         BorderWidth="3.5"
                                         TextColor="Black"
                                         BackgroundColor="WhiteSmoke"
-                                        Margin="15,50,15,0"/>
+                                        Margin="15,50,15,0"
+                                        Clicked="btneliminar_Cita_Clicked"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                
             </StackLayout>
-
-
-
 
         </Grid>
     </ContentPage.Content>

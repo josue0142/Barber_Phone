@@ -17,11 +17,11 @@ namespace Barber_Phone.Views
         {
             InitializeComponent();
 
-            /*Item1.Clicked += async (sender, e) =>
+            Item1.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new verAgendaBarbero());
+                await App.Modificador.Detail.Navigation.PushAsync(new verCita(cliente));
                 App.Modificador.IsPresented = false;
-            };*/
+            };
             Item2.Clicked += async (sender, e) =>
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new Crear_Cita(cliente));
