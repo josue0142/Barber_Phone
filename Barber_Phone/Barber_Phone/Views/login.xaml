@@ -13,7 +13,7 @@
         <StackLayout 
             Orientation="Vertical">
             <Image 
-                Source="barber01"
+                Source="barber02"
                 Margin="25"/>
 
             <ActivityIndicator

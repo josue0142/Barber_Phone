@@ -9,7 +9,7 @@
         <StackLayout Orientation="Vertical">
 
             <Image 
-                Source="LOGORD.png"
+                Source="Barber01"
                 Margin="25"/>
             <Label Text="BarberPhoneRD!"
                    FontSize="28"

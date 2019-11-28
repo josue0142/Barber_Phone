@@ -9,14 +9,14 @@
 
         <Grid>
             <Image 
-                Source="LOGORD.png"
+                Source="Barber01"
                 Aspect="AspectFit"/>
             <BoxView
                 Color="White"
                 Opacity="0.2"/>
 
             <StackLayout>
-                <Label Text="Bienvenido a BarberPhone!"
+                <Label Text="Bienvenido a BarberPhoneRD!"
                        HorizontalOptions="Center"
                        FontSize="Title"
                        FontAttributes="Bold"/>
