@@ -16,45 +16,19 @@ namespace Barber_Phone.Views
         {
             InitializeComponent();
 
-            /*Item1.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new verAgendaBarbero());
-                App.Modificador.IsPresented = false;
-            };*/
-            Item2.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new Crear_Cita());
-                App.Modificador.IsPresented = false;
-            };
-            /*Item3.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new PantallaItemTres());
-                App.Modificador.IsPresented = false;
-            };*/
-            /*Item4.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new login());
-                App.Modificador.IsPresented = false;
-            };*/
-            Item5.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new Configuracion());
-                App.Modificador.IsPresented = false;
-            };
-            Item6.Clicked += async (sender, e) =>
-            {
-                await App.Modificador.Detail.Navigation.PushAsync(new login());
-                App.Modificador.IsPresented = false;
-            };
         }
-
-        /// <summary>
-        /// Bloqueamos/Desbloqueamos el boton fisico de retroceso. 
-        /// True Bloqueado, False Desbloqueado
-        /// </summary>
-        protected override bool OnBackButtonPressed()
+        private async void TapGestureRecognizer_Tapped0(object sender, EventArgs e)
         {
-            return false;
+            await Navigation.PushAsync(new HistorialCliente());
         }
+        private async void TapGestureRecognizer_Tapped1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Crear_Cita());
+        }
+        private async void TapGestureRecognizer_Tapped2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Configuracion());
+        }
+      
     }
 }

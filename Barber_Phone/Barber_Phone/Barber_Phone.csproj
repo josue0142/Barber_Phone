@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Perfil_Cliente.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Perfil_Cliente.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Elasticsearch.Net" Version="7.4.0" />
     <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />

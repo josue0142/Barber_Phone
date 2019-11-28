@@ -12,8 +12,8 @@
         <Grid Padding="5">
 
             <Image 
-            Source="@drawable/background.jpg" 
-            Aspect="AspectFill" />
+            Source="Barber01" 
+            Aspect="AspectFit" />
 
             <BoxView 
             Color="WhiteSmoke" 
@@ -74,11 +74,6 @@
                     HorizontalTextAlignment="Center"
                     Keyboard="Numeric"/>
 
-                <!--<SearchBar 
-                    Placeholder="Ingrese barberia"
-                    Margin="5,5,5,5"
-                    HorizontalTextAlignment="Center"/>-->
-
                 <Entry
                     x:Name="txtbarberia"
                     Placeholder="Nombre de Barberia"
@@ -86,17 +81,17 @@
                     HorizontalTextAlignment="Center"
                     Keyboard="Text"/>
 
-
                 <Button 
                     x:Name="btnRegistrar"
                     Text="Registrar"
-                    Margin="15,95,15,5"
-                    BackgroundColor="SeaShell"
-                    FontSize="18"
-                    BorderWidth="5"
-                    WidthRequest="15"
+                    Margin="15,15,15,5"
+                    BorderColor="#D5C9B1"
+                    WidthRequest="150"
                     HeightRequest="50"
-                    CornerRadius="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Clicked="btnRegistrar_Clicked"/>
 
             </StackLayout>

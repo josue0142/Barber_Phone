@@ -12,9 +12,8 @@
 
         <StackLayout 
             Orientation="Vertical">
-
             <Image 
-                Source="LOGORD.png"
+                Source="barber01"
                 Margin="25"/>
 
             <ActivityIndicator

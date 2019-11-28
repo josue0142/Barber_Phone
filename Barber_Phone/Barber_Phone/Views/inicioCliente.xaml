@@ -9,9 +9,8 @@
 
         <Grid>
             <Image 
-            Source="Logu.png" 
-            Aspect="AspectFit" />
-
+                Source="LOGORD.png"
+                Aspect="AspectFit"/>
             <BoxView
                 Color="White"
                 Opacity="0.2"/>
