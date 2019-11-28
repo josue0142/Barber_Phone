@@ -7,13 +7,14 @@ using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Barber_Phone.Clases;
 
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class verAgendaBarbero : ContentPage
     {
-        public verAgendaBarbero()
+        public verAgendaBarbero(Barbero barbero)
         {
             InitializeComponent();
 

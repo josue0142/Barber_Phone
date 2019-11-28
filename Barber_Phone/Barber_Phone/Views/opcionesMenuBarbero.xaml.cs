@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,20 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class opcionesMenuBarbero : ContentPage
     {
-        public opcionesMenuBarbero()
+        public opcionesMenuBarbero(Barbero barbero)
         {
             InitializeComponent();
 
             Item1.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new verAgendaBarbero());
+                await App.Modificador.Detail.Navigation.PushAsync(new verAgendaBarbero(barbero));
                 App.Modificador.IsPresented = false;
             };
-            Item2.Clicked += async (sender, e) =>
+            /*Item2.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new HistorialCliente());
+                await App.Modificador.Detail.Navigation.PushAsync(new HistorialCliente(barbero));
                 App.Modificador.IsPresented = false;
-            };
+            };*/
             Item3.Clicked += async (sender, e) =>
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new Configuracion());
