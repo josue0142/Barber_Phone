@@ -8,8 +8,9 @@
              NavigationPage.HasNavigationBar="false"> <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
 
-    <Grid Padding="5">
+    <!--"<Grid Padding="5">-->
 
+    <ScrollView Padding="5">
         <StackLayout 
             Orientation="Vertical">
             <Image 
@@ -76,10 +77,8 @@
 
             </StackLayout>
 
-          
-
         </StackLayout>
-
-    </Grid>
+    </ScrollView>
+    <!--</Grid>-->
 
 </ContentPage>

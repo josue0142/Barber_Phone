@@ -1,4 +1,4 @@
-﻿using Barber_Phone.Clases;
+﻿using BarberPhoneRD.Clases;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,10 +7,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Barber_Phone.Datos
+namespace BarberPhoneRD.Datos
 {
-    class DDireccionB
+    class DBarberia
     {
+
         /// <summary>
         /// Metodo para crear el objeto httpclient y asignar headers.
         /// </summary>
@@ -28,14 +29,15 @@ namespace Barber_Phone.Datos
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="sector"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<DireccionB>> GetDireccionBSector()
+        public async Task<IEnumerable<Barberia>> GetBarberia(string sector)
         {
             HttpClient client = GetClient();
-            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetDireccionBSector.php";
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetBarberia.php";
             /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos del usuario en base al 
             correo recibido por parametro*/
-            var res = await client.GetAsync(URL);
+            var res = await client.GetAsync(URL + "?sector=" + sector + " ");
 
             /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria*/
             if (res.IsSuccessStatusCode)
@@ -43,13 +45,14 @@ namespace Barber_Phone.Datos
                 //Recibimos el contenido de res y lo almacenamos en un string
                 string content = await res.Content.ReadAsStringAsync();
 
-                /*Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
+                /*Convertimos el contenido del Json a un array de objetos de tipo Babero y luego
                 retornamos el array de objetos*/
-                return JsonConvert.DeserializeObject<IEnumerable<DireccionB>>(content);
+                return JsonConvert.DeserializeObject<IEnumerable<Barberia>>(content);
             }
 
             //En caso de no encontrar datos en res devolvemos un enumerable vacio.
-            return Enumerable.Empty<DireccionB>();
+            return Enumerable.Empty<Barberia>();
         }
+
     }
 }
