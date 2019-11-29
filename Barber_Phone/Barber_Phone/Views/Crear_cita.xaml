@@ -6,84 +6,85 @@
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.Crear_Cita">
     <ContentPage.Content>
-        <Grid Padding="0.5">
+        <ScrollView>
+            <Grid Padding="0.5">
 
-            <BoxView 
+                <BoxView 
             Color="White" 
             Opacity="0.8" />
-            
-            <StackLayout>
-                <Label Text="Crear Citas"
+
+                <StackLayout>
+                    <Label Text="Crear Citas"
                      VerticalOptions="Center" 
                      HorizontalOptions="CenterAndExpand" 
                      FontSize="24"
                      FontAttributes="Bold"
                      TextColor="Black"/>
-                         
-                <FlexLayout>
-                    
-                    <BoxView VerticalOptions="FillAndExpand" 
+
+                    <FlexLayout>
+
+                        <BoxView VerticalOptions="FillAndExpand" 
                              WidthRequest="1000"
                              HeightRequest="5" 
                              Color="#5F968E"/>
-                    
-                </FlexLayout>
 
-                <Label Text="Seleccione su sector" FontSize="20"
+                    </FlexLayout>
+
+                    <Label Text="Seleccione su sector" FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkSector" 
+                    <Picker x:Name="pkSector" 
                         Title="Sector" 
                         HorizontalOptions="FillAndExpand" 
                         Margin="5,0,5,0"
                         SelectedIndexChanged="pkSector_SelectedIndexChanged"/>
 
 
-                <Label Text="Seleccione una barberia:"
+                    <Label Text="Seleccione una barberia:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkBarberias" 
+                    <Picker x:Name="pkBarberias" 
                         Title="Barberias" 
                         HorizontalOptions="FillAndExpand" 
                         AnchorY="50" 
                         Margin="5,0,5,0"
                         SelectedIndexChanged="pkBarberias_SelectedIndexChanged"/>
-                
-                <Label Text="Seleccione el servicio deseado:"
+
+                    <Label Text="Seleccione el servicio deseado:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkServicios" 
+                    <Picker x:Name="pkServicios" 
                         Title="Servicios"
                         HorizontalOptions="FillAndExpand"
                         Margin="5,0,5,0"/>
 
-                <Label Text="Seleccione una fecha:"
+                    <Label Text="Seleccione una fecha:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <DatePicker x:Name="dpkFecha" 
+                    <DatePicker x:Name="dpkFecha" 
                         HorizontalOptions="FillAndExpand"  
                         Margin="5,0,5,0"
                         DateSelected="dpkFecha_DateSelected"/>
-                
-                <Label Text="Seleccione una hora:"
+
+                    <Label Text="Seleccione una hora:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkHora" 
+                    <Picker x:Name="pkHora" 
                         Title="Hora" 
                         HorizontalOptions="FillAndExpand"  
                         Margin="5,0,5,0"
                         SelectedIndexChanged="pkHora_SelectedIndexChanged"/>
 
-                <Button 
+                    <Button 
                     x:Name="btncrear_cita" 
                     Text="Crear Cita"
                     FontSize="18"
@@ -96,8 +97,9 @@
                     BackgroundColor="#5F968E"
                     Margin="15,50,15,0"
                     Clicked="btncrear_cita_Clicked"/>
-                
-            </StackLayout>
-        </Grid>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
