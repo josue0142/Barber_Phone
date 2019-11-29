@@ -11,6 +11,6 @@ namespace Barber_Phone.Views
         public string Hora { get; set; }
         public string Fecha { get; set; }
         public string Duracion { get; set; }
-
+        public string Sector { get; set; }
     }
 }

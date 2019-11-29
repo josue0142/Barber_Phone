@@ -1,39 +1,38 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using Barber_Phone.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Barber_Phone.Clases;
-using Barber_Phone.Datos;
 
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistorialCliente : ContentPage
+    public partial class HistorialBarbero : ContentPage
     {
-        public HistorialCliente(Cliente cliente)
+        public HistorialBarbero(Barbero barbero)
         {
             InitializeComponent();
 
-            MostrarHistorial(cliente);
+            MostrarHistorial(barbero);
         }
 
         /// <summary>
-        /// Metodo para mostrar el historial del cliente. 
+        /// Metodo para mostrar el historial del cliente.
         /// </summary>
-        /// <param name="cliente"></param>
-        private async void MostrarHistorial(Cliente cliente)
+        /// <param name="barbero"></param>
+        private async void MostrarHistorial(Barbero barbero)
         {
             try
             {
-                /*Obtenemos los datos del webservices en base al correo del cliente logeado
+                /*Obtenemos los datos del webservices en base al correo del barbero logeado
             y lo almacenamos en un array*/
                 DCita dCita = new DCita();
-                var res = await dCita.GetHistorialCitaCliente(cliente.Correo);
+                var res = await dCita.GetHistorialCitaBarbero(barbero.Correo);
 
                 /*Verifica si hay 0 objetos en el array res y de ser asi muestra una alerta en
                       pantalla historial no disponible*/
@@ -49,12 +48,11 @@ namespace Barber_Phone.Views
                 {
                     historial.Add(new Cita
                     {
-                        Barbero = "Barbero: "+ item.Barbero,
-                        Barberia = "Barberia: "+item.Barberia,  
-                        Servicio = "Tipo de servicio: "+item.Servicio,
-                        Hora = "Hora: "+item.Hora,
-                        Fecha = "Fecha: "+item.Fecha,
-                        Duracion = "Duracion: "+item.Duracion
+                        Cliente = "Cliente: " + item.Cliente,
+                        Servicio = "Tipo de servicio: " + item.Servicio,
+                        Hora = "Hora: " + item.Hora,
+                        Fecha = "Fecha: " + item.Fecha,
+                        Duracion = "Duracion: " + item.Duracion
                     });
                 }
 
@@ -66,9 +64,7 @@ namespace Barber_Phone.Views
             catch (Exception)
             {
                 throw;
-            } 
-        
+            }   
         }
-
     }
 }
