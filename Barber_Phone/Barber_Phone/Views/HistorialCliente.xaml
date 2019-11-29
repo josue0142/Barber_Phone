@@ -13,7 +13,7 @@
         <Grid>
 
             <Image 
-            Source="Logu.png" 
+            Source="Barber02" 
             Aspect="AspectFit" />
 
             <BoxView
@@ -41,17 +41,21 @@
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Duracion}" FontSize="18" FontAttributes="Bold"/>
                                     <Button 
-                                        x:Name="btneliminar_historial" 
-                                        Text="Eliminar Historial"
-                                        FontSize="18"
-                                        BorderColor="LightBlue"
-                                        WidthRequest="150"
-                                        HeightRequest="50"
-                                        CornerRadius="40"
-                                        BorderWidth="3.5"
-                                        TextColor="Black"
-                                        BackgroundColor="WhiteSmoke"
-                                        Margin="15,50,15,0"/>
+
+                                
+                        
+                    x:Name="btneliminar_historial" 
+                    Text="Eliminar Historial"
+                      BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
+                    Margin="15,50,15,0"
+                    />
+
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

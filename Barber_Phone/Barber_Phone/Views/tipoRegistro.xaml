@@ -8,19 +8,17 @@
              NavigationPage.HasNavigationBar="false">
 
     <ScrollView>
-
         <Grid
         Padding="5">
 
             <Image 
-            Source="@drawable/background.jpg" 
+            Source="Barber01" 
             Aspect="AspectFill" />
 
             <BoxView 
             Color="WhiteSmoke" 
             Opacity="0.9" />
-
-        <StackLayout 
+            <StackLayout 
             Orientation="Vertical">
 
             <Label 
@@ -37,14 +35,12 @@
                     x:Name="btnRegistroc" 
                     Text="Cliente"
                     FontSize="18"
-                    BorderColor="LightBlue"
                     Margin="0,150,0,0"
+                    BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
-                    CornerRadius="40"
-                    BorderWidth="3.5"
-                    TextColor="black"
-                    BackgroundColor="White"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Clicked="btnRegistroc_Clicked"/>
 
                 <Button 
@@ -52,13 +48,11 @@
                     x:Name="btnRegistrob" 
                     Text="Barbero"
                     FontSize="18"
-                    BorderColor="LightBlue"
+                    BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
-                    CornerRadius="40"
-                    BorderWidth="3.5"
-                    TextColor="Black"
-                    BackgroundColor="White"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                     Margin="0,150,0,0"
                     Clicked="btnRegistrob_Clicked"/>
 

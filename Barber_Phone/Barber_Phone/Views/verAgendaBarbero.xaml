@@ -10,7 +10,7 @@
         <Grid>
 
             <Image 
-            Source="Logu.png" 
+            Source="Barber01" 
             Aspect="AspectFit" />
 
             <BoxView
