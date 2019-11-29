@@ -1,4 +1,4 @@
-﻿using Barber_Phone.Clases;
+﻿using BarberPhoneRD.Clases;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,14 +7,10 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Barber_Phone.Datos
+namespace BarberPhoneRD.Datos
 {
-    class DDireccionB
+    class DHora_Servicio
     {
-        /// <summary>
-        /// Metodo para crear el objeto httpclient y asignar headers.
-        /// </summary>
-        /// <returns></returns>
         private HttpClient GetClient()
         {
             HttpClient client = new HttpClient();
@@ -25,14 +21,10 @@ namespace Barber_Phone.Datos
             return client;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public async Task<IEnumerable<DireccionB>> GetDireccionBSector()
+        public async Task<IEnumerable<Hora_Servicio>> GetHoraServicio()
         {
             HttpClient client = GetClient();
-            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetDireccionBSector.php";
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetHora.php";
             /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos del usuario en base al 
             correo recibido por parametro*/
             var res = await client.GetAsync(URL);
@@ -45,11 +37,11 @@ namespace Barber_Phone.Datos
 
                 /*Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
                 retornamos el array de objetos*/
-                return JsonConvert.DeserializeObject<IEnumerable<DireccionB>>(content);
+                return JsonConvert.DeserializeObject<IEnumerable<Hora_Servicio>>(content);
             }
 
             //En caso de no encontrar datos en res devolvemos un enumerable vacio.
-            return Enumerable.Empty<DireccionB>();
+            return Enumerable.Empty<Hora_Servicio>();
         }
     }
 }
