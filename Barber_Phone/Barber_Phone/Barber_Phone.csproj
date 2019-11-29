@@ -6,7 +6,7 @@
     <ApplicationIcon />
     <Win32Resource />
     <AssemblyName>BarberPhoneRD!</AssemblyName>
-    <RootNamespace>BarberPhoneRD!</RootNamespace>
+    <RootNamespace>BarberPhoneRD</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
