@@ -1,55 +1,55 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using Barber_Phone.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Barber_Phone.Clases;
-using Barber_Phone.Datos;
 
 namespace Barber_Phone.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class verAgendaBarbero : ContentPage
+    public partial class verCita : ContentPage
     {
-        public verAgendaBarbero(Barbero barbero)
+        public verCita(Cliente cliente)
         {
             InitializeComponent();
 
-            MostrarAgenda(barbero);
+            VerCita(cliente);
         }
 
         /// <summary>
-        /// Metodo para mostrar la agenda del barbero.
+        /// Metodo para mostrar la cita al cliente. 
         /// </summary>
-        /// <param name="barbero"></param>
-        private async void MostrarAgenda(Barbero barbero)
+        /// <param name="cliente"></param>
+        private async void VerCita(Cliente cliente)
         {
             try
             {
-                /*Obtenemos los datos del webservices en base al correo del barbero logeado
+                /*Obtenemos los datos del webservices en base al correo del cliente logeado
             y lo almacenamos en un array*/
                 DCita dCita = new DCita();
-                var res = await dCita.GetAgendaBarbero(barbero.Correo);
+                var res = await dCita.GetCitaCliente(cliente.Correo);
 
                 /*Verifica si hay 0 objetos en el array res y de ser asi muestra una alerta en
-                      pantalla Agenda no disponible*/
+                      pantalla cita no disponible*/
                 if (res.Count() == 0)
                 {
-                    await DisplayAlert("Mensaje", "Agenda no disponible", "Aceptar");
+                    await DisplayAlert("Mensaje", "Cita no disponible", "Aceptar");
                     return;
                 }
 
                 //Creamos una lista para cargarla con los datos del array res
-                var agenda = new List<Cita>();
+                var cita = new List<Cita>();
                 foreach (var item in res)
                 {
-                    agenda.Add(new Cita
+                    cita.Add(new Cita
                     {
-                        Cliente = "Cliente: " + item.Cliente,
+                        Barbero = "Barbero: " + item.Barbero,
+                        Barberia = "Barberia: " + item.Barberia,
                         Servicio = "Tipo de servicio: " + item.Servicio,
                         Hora = "Hora: " + item.Hora,
                         Fecha = "Fecha: " + item.Fecha,
@@ -57,15 +57,20 @@ namespace Barber_Phone.Views
                     });
                 }
 
-                //Establecemos la variable agenda como la fuente de datos para
-                //el listview de la pantalla agenda
-                MainListView.ItemsSource = agenda;
+                //Establecemos la variable cita como la fuente de datos para
+                //el listview de la pantalla verCita
+                MainListView.ItemsSource = cita;
 
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        private void btneliminar_Cita_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
