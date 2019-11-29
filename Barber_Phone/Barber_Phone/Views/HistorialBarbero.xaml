@@ -13,7 +13,7 @@
         <Grid>
 
             <Image  
-            Source="Logu.png" 
+            Source="Barber02" 
             Aspect="AspectFit" />
 
             <BoxView
@@ -43,13 +43,13 @@
                                         x:Name="btneliminar_historial" 
                                         Text="Eliminar Historial"
                                         FontSize="18"
-                                        BorderColor="LightBlue"
-                                        WidthRequest="150"
-                                        HeightRequest="50"
-                                        CornerRadius="40"
-                                        BorderWidth="3.5"
-                                        TextColor="Black"
-                                        BackgroundColor="WhiteSmoke"
+                                     BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                                         Margin="15,50,15,0"/>
                                 </StackLayout>
                             </ViewCell>
