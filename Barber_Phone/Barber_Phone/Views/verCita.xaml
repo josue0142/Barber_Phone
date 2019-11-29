@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.verAgendaBarbero" 
-             Title="Ver Agenda">
+             x:Class="Barber_Phone.Views.verCita"
+             Title="Ver Cita">
     <ContentPage.Content>
         <Grid>
 
             <Image 
-            Source="Barber01" 
+            Source="Logu.png" 
             Aspect="AspectFit" />
 
             <BoxView
@@ -18,7 +18,7 @@
                 Opacity="0.8"/>
 
             <StackLayout>
-                <Label Text ="Agenda Barbero"
+                <Label Text ="Ver Cita"
                        HorizontalOptions="Center"
                        FontSize="25"
                        />
@@ -27,19 +27,33 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                            <StackLayout Orientation="Vertical" Margin="10">
-                                <Label Text="{Binding Cliente}" FontSize="18" FontAttributes="Bold"/>
+                                <StackLayout Orientation="Vertical" Margin="10">
+                                    <Label Text="{Binding Barbero}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Barberia}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Servicio}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Hora}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Duracion}" FontSize="18" FontAttributes="Bold"/>
-                            </StackLayout>
+                                    <Button 
+                                        x:Name="btneliminar_Cita" 
+                                        Text="Eliminar"
+                                        FontSize="18"
+                                        BorderColor="LightBlue"
+                                        WidthRequest="150"
+                                        HeightRequest="50"
+                                        CornerRadius="40"
+                                        BorderWidth="3.5"
+                                        TextColor="Black"
+                                        BackgroundColor="WhiteSmoke"
+                                        Margin="15,50,15,0"
+                                        Clicked="btneliminar_Cita_Clicked"/>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    </ListView>
+                </ListView>
             </StackLayout>
-           
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
