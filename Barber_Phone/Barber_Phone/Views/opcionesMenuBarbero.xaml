@@ -30,6 +30,12 @@
                     HeightRequest="50"
                     TextColor="White"
                     BackgroundColor="#5F968E"/>
+            <Button x:Name="Item5" Text="Perfil Barbero" FontSize="18"
+                    BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"/>
             <Button x:Name="Item4" Text="Cerrar Sesión" FontSize="18"
                     BorderColor="#D5C9B1"
                     WidthRequest="150"

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Barber_Phone.Views.PerfilBarbero">
+    <ContentPage.Content>
+
+         
+
+            <Grid Padding="5">
+
+            <Image 
+            Source="Barber02" 
+            Aspect="AspectFit" />
+            <BoxView
+                Color="White"
+                Opacity="0.8"/>
+
+                <StackLayout>
+                    <Label Text ="Mi Perfil"
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                      TextColor="Black" />
+                    <FlexLayout>
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
+                    </FlexLayout>
+
+                    <Label Text="Nombre"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+                <Label Text="Josue"
+                           FontSize="16"
+                           />
+                <Label Text="Apellido"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+
+                <Label Text="Jimenez"
+                           FontSize="16"/>
+                    
+                <Label Text="Telefono"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+                <Label Text="829-669-4578"
+                           FontSize="16"/>
+
+                <Label Text="Correo Electronico"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+
+                <Label Text="josuejjimenezd@gmail.com"
+                           FontSize="16"/>
+                    
+                <Label Text="Contraseña"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+
+                <Label Text="*************"
+                           FontSize="16"/>
+                    
+                <Button Text="Actualizar Datos"
+                    BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
+                    Margin="0,200,0,0"
+                    Clicked="btnActualizarDatosB_Clicked"/>
+            </StackLayout>
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
