@@ -15,9 +15,13 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Crear_Cita : ContentPage
     {
-        public Crear_Cita(Cliente cliente)
+        Cliente cliente = new Cliente();
+
+        public Crear_Cita(Cliente aux)
         {
             InitializeComponent();
+
+            cliente = aux;
 
             btncrear_cita.IsEnabled = false;
 
@@ -186,6 +190,22 @@ namespace Barber_Phone.Views
 
         private async void btncrear_cita_Clicked(object sender, EventArgs e)
         {
+
+            try
+            {
+                DCita dcita = new DCita();
+                var res = await dcita.PostCita(pkSector.SelectedItem.ToString(), 
+                    pkBarberias.SelectedItem.ToString(),
+                    pkServicios.SelectedItem.ToString(),
+                    dpkFecha.Date.ToString(),
+                    pkHora.ToString(),
+                    cliente.Id_Cliente.ToString());
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
 

@@ -6,6 +6,7 @@ namespace Barber_Phone.Clases
 {
     public class Barbero
     {
+        private int id_Barbero;
         private string primer_Nombre;
         private string primer_Apellido;
         private string correo;
@@ -13,11 +14,13 @@ namespace Barber_Phone.Clases
         private string numero_Telefono;
         private string barberia;
 
+        public int Id_Barbero { get => id_Barbero; set => id_Barbero = value; }
         public string Primer_Nombre { get => primer_Nombre; set => primer_Nombre = value; }
         public string Primer_Apellido { get => primer_Apellido; set => primer_Apellido = value; }
         public string Correo { get => correo; set => correo = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public string Numero_Telefono { get => numero_Telefono; set => numero_Telefono = value; }
         public string Barberia { get => barberia; set => barberia = value; }
+        
     }
 }

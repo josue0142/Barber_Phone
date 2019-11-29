@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.AcercaDe">
-    <Grid Padding="5">
+    <!--<Grid Padding="5">-->
+        <ScrollView Padding="5"> 
         <StackLayout Orientation="Vertical">
 
             <Image 
@@ -25,5 +26,6 @@
                    FontSize="18"/>
             
         </StackLayout>
-    </Grid>
+    </ScrollView>
+    <!--</Grid>-->
 </ContentPage>

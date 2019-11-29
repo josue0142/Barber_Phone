@@ -7,14 +7,14 @@
              x:Class="Barber_Phone.Views.PerfilBarbero">
     <ContentPage.Content>
 
-         
 
+        <ScrollView>
             <Grid Padding="5">
 
-            <Image 
+                <Image 
             Source="Barber02" 
             Aspect="AspectFit" />
-            <BoxView
+                <BoxView
                 Color="White"
                 Opacity="0.8"/>
 
@@ -24,7 +24,7 @@
                        FontSize="25"
                       TextColor="Black" />
                     <FlexLayout>
-                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
+                        <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
                     </FlexLayout>
 
                     <Label Text="Nombre"
@@ -32,45 +32,45 @@
                            TextColor="Black"
                            />
 
-                <Label Text="Josue"
+                    <Label Text="Josue"
                            FontSize="16"
                            />
-                <Label Text="Apellido"
+                    <Label Text="Apellido"
                            FontSize="20"
                            TextColor="Black"
                            />
 
 
-                <Label Text="Jimenez"
+                    <Label Text="Jimenez"
                            FontSize="16"/>
-                    
-                <Label Text="Telefono"
+
+                    <Label Text="Telefono"
                            FontSize="20"
                            TextColor="Black"
                            />
 
-                <Label Text="829-669-4578"
+                    <Label Text="829-669-4578"
                            FontSize="16"/>
 
-                <Label Text="Correo Electronico"
-                           FontSize="20"
-                           TextColor="Black"
-                           />
-
-
-                <Label Text="josuejjimenezd@gmail.com"
-                           FontSize="16"/>
-                    
-                <Label Text="Contraseña"
+                    <Label Text="Correo Electronico"
                            FontSize="20"
                            TextColor="Black"
                            />
 
 
-                <Label Text="*************"
+                    <Label Text="josuejjimenezd@gmail.com"
                            FontSize="16"/>
-                    
-                <Button Text="Actualizar Datos"
+
+                    <Label Text="Contraseña"
+                           FontSize="20"
+                           TextColor="Black"
+                           />
+
+
+                    <Label Text="*************"
+                           FontSize="16"/>
+
+                    <Button Text="Actualizar Datos"
                     BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
@@ -78,8 +78,9 @@
                     BackgroundColor="#5F968E"
                     Margin="0,200,0,0"
                     Clicked="btnActualizarDatosB_Clicked"/>
-            </StackLayout>
+                    
+                </StackLayout>
             </Grid>
-
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
