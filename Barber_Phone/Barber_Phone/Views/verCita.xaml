@@ -10,7 +10,7 @@
         <Grid>
 
             <Image 
-            Source="Logu.png" 
+            Source="Barber02" 
             Aspect="AspectFit" />
 
             <BoxView
@@ -22,6 +22,9 @@
                        HorizontalOptions="Center"
                        FontSize="25"
                        />
+                <FlexLayout>
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
+                </FlexLayout>
                 <ListView x:Name="MainListView"
                           HasUnevenRows="True">
                     <ListView.ItemTemplate>
@@ -38,13 +41,13 @@
                                         x:Name="btneliminar_Cita" 
                                         Text="Eliminar"
                                         FontSize="18"
-                                        BorderColor="LightBlue"
-                                        WidthRequest="150"
-                                        HeightRequest="50"
-                                        CornerRadius="40"
-                                        BorderWidth="3.5"
-                                        TextColor="Black"
-                                        BackgroundColor="WhiteSmoke"
+                                      BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    CornerRadius="40"
+                    BorderWidth="3.5"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
                                         Margin="15,50,15,0"
                                         Clicked="btneliminar_Cita_Clicked"/>
                                 </StackLayout>
