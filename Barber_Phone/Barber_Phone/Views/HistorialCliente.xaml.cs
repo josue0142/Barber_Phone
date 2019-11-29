@@ -50,7 +50,7 @@ namespace Barber_Phone.Views
                     historial.Add(new Cita
                     {
                         Barbero = "Barbero: "+ item.Barbero,
-                        Barberia = "Barberia: "+item.Barberia,
+                        Barberia = "Barberia: "+item.Barberia,  
                         Servicio = "Tipo de servicio: "+item.Servicio,
                         Hora = "Hora: "+item.Hora,
                         Fecha = "Fecha: "+item.Fecha,
