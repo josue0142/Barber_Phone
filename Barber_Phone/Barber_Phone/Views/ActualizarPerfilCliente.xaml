@@ -4,9 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.ActulizarPefilBarbero"
-             >
-
+             x:Class="BarberPhoneRD.Views.ActualizarPerfilCliente">
     <ContentPage.Content>
         <ScrollView Padding="5">
             <Grid Padding="5">

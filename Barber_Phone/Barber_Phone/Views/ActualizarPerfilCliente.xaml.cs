@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Barber_Phone.Views
+namespace BarberPhoneRD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ActulizarPefilBarbero : ContentPage
+    public partial class ActualizarPerfilCliente : ContentPage
     {
-        public ActulizarPefilBarbero()
+        Cliente up
+        public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
         }
