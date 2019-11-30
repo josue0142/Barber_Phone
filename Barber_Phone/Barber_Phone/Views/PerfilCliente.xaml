@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.PerfilBarbero">
+             x:Class="BarberPhoneRD.Views.PerfilCliente">
     <ContentPage.Content>
 
         <ScrollView>
@@ -33,7 +33,7 @@
                     <Label x:Name="lblNombre"
                            Text=""
                            FontSize="16"/>
-                    
+
                     <Label Text="Apellido"
                            FontSize="20"
                            TextColor="Black"/>
@@ -65,14 +65,6 @@
                     <Label Text="*************"
                            FontSize="16"/>
 
-                    <Label Text="Barberia Asignada"
-                           FontSize="20"
-                           TextColor="Black"/>
-
-                    <Label x:Name="lblBarberiaA"
-                           Text=""
-                           FontSize="16"/>
-
                     <Button x:Name="btnActualizar"
                         Text="Actualizar Datos"
                     BorderColor="#D5C9B1"
@@ -82,7 +74,7 @@
                     BackgroundColor="#5F968E"
                     Margin="0,200,0,0"
                     Clicked="btnActualizar_Clicked"/>
-                    
+
                 </StackLayout>
             </Grid>
         </ScrollView>

@@ -47,6 +47,13 @@
                     TextColor="White"
                     BackgroundColor="#5F968E"/>
 
+                <Button x:Name="Item7" Text="Perfil Cliente" FontSize="18"
+                   BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"/>
+
                 <Button x:Name="Item6" Text="Cerrar Sesión" FontSize="18"
                    BorderColor="#D5C9B1"
                     WidthRequest="150"
