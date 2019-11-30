@@ -48,7 +48,7 @@
                                         BackgroundColor="#5F968E"
                                         Margin="15,50,15,0"
                                         Clicked="btneditarcita"/>
-                                    <Button 
+                                    <!--<Button 
                                         x:Name="btnEliminarCita" 
                                         Text="Eliminar Cita"
                                         FontSize="18"
@@ -59,7 +59,7 @@
                                         BorderWidth="3.5"
                                         TextColor="White"
                                         BackgroundColor="#5F968E"
-                                        Margin="15,50,15,0"/>
+                                        Margin="15,50,15,0"/>-->
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

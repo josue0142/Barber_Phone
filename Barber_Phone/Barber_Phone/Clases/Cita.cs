@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Barber_Phone.Clases
 {
-    class Cita
+    public class Cita
     {
+        private int id_Cita;
         private string cliente;
         private string barbero;
         private string barberia;
@@ -23,6 +24,6 @@ namespace Barber_Phone.Clases
         public string Servicio { get => servicio; set => servicio = value; }
         public string Duracion { get => duracion; set => duracion = value; }
         public string Estado { get => estado; set => estado = value; }
-        
+        public int Id_Cita { get => id_Cita; set => id_Cita = value; }
     }
 }

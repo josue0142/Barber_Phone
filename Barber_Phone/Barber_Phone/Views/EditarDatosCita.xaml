@@ -26,22 +26,24 @@
                            TextColor="Black"/>
 
 
-                    <!--<Picker Title="Servicio"
-                             x:Name="pkServicio" 
+                    <Picker Title="Servicio"
+                            x:Name="pkServicios" 
                         HorizontalOptions="FillAndExpand" 
                         Margin="5,0,5,0"
-                        SelectedIndexChanged="pkSector_SelectedIndexChanged"
-                        TitleColor="Black"/>-->
+                        TitleColor="Black"
+                        SelectedIndexChanged="pkServicios_SelectedIndexChanged"/>
 
 
 
-                    <Button Text="Guardar" FontSize="18"
+                    <Button x:Name="btnGuardar"
+                        Text="Guardar" FontSize="18"
                     BorderColor="#D5C9B1"
                     WidthRequest="150"
                     HeightRequest="50"
                     TextColor="White"
                     BackgroundColor="#5F968E"
-                    Margin="0,220,0,0"/>
+                    Margin="0,220,0,0"
+                    Clicked="btnGuardar_Clicked"/>
 
                 </StackLayout>
 

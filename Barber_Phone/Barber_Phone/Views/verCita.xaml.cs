@@ -14,10 +14,11 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class verCita : ContentPage
     {
+        Cliente delCliente = new Cliente();
         public verCita(Cliente cliente)
         {
             InitializeComponent();
-
+            delCliente = cliente;
             VerCita(cliente);
         }
 
@@ -68,9 +69,30 @@ namespace Barber_Phone.Views
             }
         }
 
-        private void btneliminar_Cita_Clicked(object sender, EventArgs e)
+        private async void btneliminar_Cita_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                /*Obtenemos los datos del webservices en base al correo del cliente logeado
+            y lo almacenamos en un array*/
+                DCita dCita = new DCita();
+                var res = await dCita.GetCitaCliente(delCliente.Correo);
 
+                
+                foreach (var item in res)
+                {
+                    dCita.EliminarCita(item.Id_Cita);
+                    await DisplayAlert("Proceso", "Cita eliminada", "Aceptar");
+                }
+
+                await Navigation.PushAsync(new MenuCliente(delCliente));
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
