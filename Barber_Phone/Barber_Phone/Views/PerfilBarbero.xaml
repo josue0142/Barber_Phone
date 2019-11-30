@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.PerfilBarbero">
+             x:Class="Barber_Phone.Views.PerfilBarbero"
+              NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
 
         <ScrollView>
@@ -32,7 +33,8 @@
 
                     <Label x:Name="lblNombre"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
                     
                     <Label Text="Apellido"
                            FontSize="20"
@@ -40,7 +42,8 @@
 
                     <Label x:Name="lblApellido"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Telefono"
                            FontSize="20"
@@ -48,7 +51,8 @@
 
                     <Label x:Name="lblTelefono"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Correo Electronico"
                            FontSize="20"
@@ -56,14 +60,16 @@
 
                     <Label x:Name="lblCorreo"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Contraseña"
                            FontSize="20"
                            TextColor="Black"/>
 
                     <Label Text="*************"
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Barberia Asignada"
                            FontSize="20"
@@ -71,7 +77,8 @@
 
                     <Label x:Name="lblBarberiaA"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Button x:Name="btnActualizar"
                         Text="Actualizar Datos"

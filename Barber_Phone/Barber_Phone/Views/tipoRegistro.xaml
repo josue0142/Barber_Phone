@@ -25,7 +25,8 @@
                 Text="Seleccione el tipo de registro:" 
                 Margin="45,100,25,20"
                 FontSize="24"
-                FontAttributes="Bold"/>
+                FontAttributes="Bold"
+                TextColor="Black"/>
 
             <StackLayout 
                 Orientation="Horizontal" HorizontalOptions="FillAndExpand">

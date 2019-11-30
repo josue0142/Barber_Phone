@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.opcionesMenuBarbero"
-             Title="opcionesMenuBarbero">
+             Title="opcionesMenuBarbero"
+        NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="White">
