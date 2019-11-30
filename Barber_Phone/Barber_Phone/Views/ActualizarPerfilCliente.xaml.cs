@@ -49,8 +49,12 @@ namespace BarberPhoneRD.Views
 
                 DCliente dCliente = new DCliente();
                 var res = await dCliente.UpdateCliente(upcliente);
-
                 #endregion
+
+                await DisplayAlert("Proceso", "Procesando los cambios", "Aceptar");
+
+                await Navigation.PushAsync(new PerfilCliente(upcliente));
+
             }
             catch (Exception)
             {

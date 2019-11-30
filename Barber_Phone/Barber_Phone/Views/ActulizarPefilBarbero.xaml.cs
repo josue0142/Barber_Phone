@@ -48,6 +48,10 @@ namespace Barber_Phone.Views
                 await dBarbero.UpdateBarbero(upBarbero);
 
                 #endregion
+
+                await DisplayAlert("Proceso", "Procesando los cambios", "Aceptar");
+
+                await Navigation.PushAsync(new PerfilBarbero(upBarbero));
             }
             catch (Exception)
             {
