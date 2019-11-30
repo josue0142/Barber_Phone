@@ -1,4 +1,5 @@
 ﻿using Barber_Phone.Clases;
+using BarberPhoneRD.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,11 @@ namespace Barber_Phone.Views
             Item5.Clicked += async (sender, e) =>
             {
                 await App.Modificador.Detail.Navigation.PushAsync(new Configuracion());
+                App.Modificador.IsPresented = false;
+            };
+            Item7.Clicked += async (sender, e) =>
+            {
+                await App.Modificador.Detail.Navigation.PushAsync(new PerfilCliente(cliente));
                 App.Modificador.IsPresented = false;
             };
             Item6.Clicked += async (sender, e) =>
