@@ -200,6 +200,8 @@ namespace Barber_Phone.Views
                     dpkFecha.Date.ToString(),
                     pkHora.ToString(),
                     cliente.Id_Cliente.ToString());
+
+                //Poner un cod para enviar a la pantalla ver cita una vez se cre la cita
             }
             catch (Exception)
             {

@@ -79,7 +79,7 @@
                            Text=""
 
                            FontSize="16"
-                           TextColor="Black"/>
+                           TextColor="Black"/>-->
 
 
                     <Button x:Name="btnActualizar"
