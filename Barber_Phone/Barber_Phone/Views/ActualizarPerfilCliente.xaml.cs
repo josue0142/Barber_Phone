@@ -13,7 +13,7 @@ namespace BarberPhoneRD.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActualizarPerfilCliente : ContentPage
     {
-        Cliente up
+       
         public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
