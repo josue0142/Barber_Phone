@@ -90,7 +90,7 @@ namespace Barber_Phone.Datos
 UpdateBarbero(Barbero barbero)
         {
             HttpClient client = GetClient();
-            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostUsers/PostBarbero.php";
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/UpdatUsers/UpdateBarbero.php";
 
             //Creamos una tupla con los datos del barbero y lo almacenamos en la variable content 
             var content = new FormUrlEncodedContent(new[] {

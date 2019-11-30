@@ -20,15 +20,13 @@ namespace BarberPhoneRD.Views
         public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
-
-            txtTelefono.Text = cliente.Numero_Telefono;
-            txtContraseña.Text = cliente.Contraseña;
-            txtConfContraseña.Text = cliente.Contraseña;
-            upcliente = cliente;
+                     
+            upcliente = cliente;    
         }
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
+           
             try
             {
                 #region Validar contraseña
@@ -47,15 +45,18 @@ namespace BarberPhoneRD.Views
 
                 DCliente dCliente = new DCliente();
                 var res = await dCliente.UpdateCliente(upcliente);
-
                 #endregion
+
+                await DisplayAlert("Proceso", "Procesando los cambios", "Aceptar");
+
+                await Navigation.PushAsync(new PerfilCliente(upcliente));
+
             }
             catch (Exception)
             {
 
                 throw;
             }
-
 
         }
     }
