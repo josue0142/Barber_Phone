@@ -32,7 +32,7 @@
                            FontSize="20"
                            TextColor="Black"/>
 
-                    <Entry Placeholder="Telefono" 
+                    <Entry x:Name="txtTelefono" 
                            Keyboard="Numeric"
                            FontSize="16"/>
 
@@ -40,7 +40,7 @@
                            FontSize="20"
                            TextColor="Black"/>
 
-                    <Entry Placeholder="Contraseña"
+                    <Entry x:Name="txtContraseña"
                            FontSize="16"
                            IsPassword="True"/>
 
@@ -48,7 +48,7 @@
                            FontSize="20"
                            TextColor="Black"/>
 
-                    <Entry Placeholder="Confirmar Contraseña"
+                    <Entry x:Name="txtConfContraseña"
                            FontSize="16"
                            IsPassword="True"/>
 

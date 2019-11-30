@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Barber_Phone.Clases;
+using Barber_Phone.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +14,46 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActulizarPefilBarbero : ContentPage
     {
-        public ActulizarPefilBarbero()
+        Barbero upBarbero = new Barbero();
+
+        public ActulizarPefilBarbero(Barbero barbero)
         {
             InitializeComponent();
+
+            txtTelefono.Text = barbero.Numero_Telefono;
+            txtContraseña.Text = barbero.Contraseña;
+            txtConfContraseña.Text = barbero.Contraseña;
+            upBarbero = barbero;
         }
 
-        private void btnGuardar_Clicked(object sender, EventArgs e)
+        private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                #region Validar contraseña
+                //Validamos si los campos de contraseña y confirmacion de contraseña son iguales
+                if (txtContraseña.Text != txtConfContraseña.Text)
+                {
+                    //ActivarDesactivarActivityIndicator(false);
+                    await DisplayAlert("Error", "Contraseñas no coinciden", "Aceptar");
+                    return;
+                }
+                #endregion
 
+                #region Enviar datos a la BD
+                upBarbero.Contraseña = txtContraseña.Text;
+                upBarbero.Numero_Telefono = txtTelefono.Text;
+
+                DBarbero dBarbero = new DBarbero();
+                await dBarbero.UpdateBarbero(upBarbero);
+
+                #endregion
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
