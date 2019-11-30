@@ -97,5 +97,37 @@ namespace Barber_Phone.Datos
             return Enumerable.Empty<Cliente>();
         }
 
+        public async Task<IEnumerable<Cliente>> UpdateCliente(Cliente cliente)
+        {
+            HttpClient client = GetClient();
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/UpdatUsers/UpdateCliente.php";
+
+            //Creamos una tupla con los datos del cliente y lo almacenamos en la variable content 
+            var content = new FormUrlEncodedContent(new[] {
+                new KeyValuePair<string, string>("correo", cliente.Correo),
+                new KeyValuePair<string, string>("contraseña", cliente.Contraseña),
+                new KeyValuePair<string, string>("numero_Telefono",cliente.Numero_Telefono),
+            }
+            );
+
+            /*Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos del cliente
+             * y obtenemos un array con los datos del cliente en base a la insersion realizada en la BD*/
+            var res = await client.PostAsync(URL, content);
+
+            /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria*/
+            if (res.IsSuccessStatusCode)
+            {
+                //Recibimos el contenido de res y lo almacenamos en un string
+                string aux = await res.Content.ReadAsStringAsync();
+
+                /*Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
+                retornamos el array de objetos*/
+                return JsonConvert.DeserializeObject<IEnumerable<Cliente>>(aux);
+            }
+
+            //En caso de no encontrar datos en res devolvemos un enumerable vacio.
+            return Enumerable.Empty<Cliente>();
+        }
+
     }
 }

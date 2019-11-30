@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.verCita"
- NavigationPage.HasNavigationBar="True">
+             x:Class="BarberPhoneRD.Views.EditarCita"
+    NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
         <Grid>
 
@@ -18,11 +18,11 @@
                 Opacity="0.8"/>
 
             <StackLayout>
-                <Label Text ="Ver Cita"
+                <Label Text ="Editar Cita"
                        HorizontalOptions="Center"
                        FontSize="25"
                       TextColor="Black" />
-              
+
                 <ListView x:Name="MainListView"
                           HasUnevenRows="True">
                     <ListView.ItemTemplate>
@@ -36,18 +36,30 @@
                                     <Label Text="{Binding Fecha}" FontSize="18" FontAttributes="Bold"/>
                                     <Label Text="{Binding Duracion}" FontSize="18" FontAttributes="Bold"/>
                                     <Button 
-                                        x:Name="btneliminar_Cita" 
-                                        Text="Eliminar"
+                                        x:Name="btneditarcita" 
+                                        Text="Editar Cita"
                                         FontSize="18"
-                                      BorderColor="#D5C9B1"
-                    WidthRequest="150"
-                    HeightRequest="50"
-                    CornerRadius="40"
-                    BorderWidth="3.5"
-                    TextColor="White"
-                    BackgroundColor="#5F968E"
+                                         BorderColor="#D5C9B1"
+                                         WidthRequest="150"
+                                          HeightRequest="50"
+                                        CornerRadius="40"
+                                        BorderWidth="3.5"
+                                        TextColor="White"
+                                        BackgroundColor="#5F968E"
                                         Margin="15,50,15,0"
-                                        Clicked="btneliminar_Cita_Clicked"/>
+                                        Clicked="btneditarcita"/>
+                                    <Button 
+                                        x:Name="btnEliminarCita" 
+                                        Text="Eliminar Cita"
+                                        FontSize="18"
+                                         BorderColor="#D5C9B1"
+                                         WidthRequest="150"
+                                          HeightRequest="50"
+                                        CornerRadius="40"
+                                        BorderWidth="3.5"
+                                        TextColor="White"
+                                        BackgroundColor="#5F968E"
+                                        Margin="15,50,15,0"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

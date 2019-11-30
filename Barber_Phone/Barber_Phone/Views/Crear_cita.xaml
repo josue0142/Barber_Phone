@@ -4,73 +4,85 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.Crear_Cita">
+             x:Class="Barber_Phone.Views.Crear_Cita"
+             NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
-        <Grid Padding="0.5">
+        <ScrollView>
+            <Grid Padding="0.5">
 
-            <BoxView 
+                <BoxView 
             Color="White" 
             Opacity="0.8" />
-            
-            <StackLayout>
-                <Label Text="Crear Citas"
+
+                <StackLayout>
+                    <Label Text="Crear Cita"
                      VerticalOptions="Center" 
                      HorizontalOptions="CenterAndExpand" 
                      FontSize="24"
                      FontAttributes="Bold"
                      TextColor="Black"/>
-                         
-                <FlexLayout>
-                    
-                    <BoxView VerticalOptions="FillAndExpand" 
-                             WidthRequest="1000"
-                             HeightRequest="5" 
-                             Color="#5F968E"/>
-                    
-                </FlexLayout>
 
-                <Label Text="Seleccione su sector" FontSize="20"
+
+                    <Label Text="Seleccione su sector" FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkSector" 
+                    <Picker x:Name="pkSector" 
                         Title="Sector" 
                         HorizontalOptions="FillAndExpand" 
-                        Margin="5,0,5,0"/>
+                        Margin="5,0,5,0"
+                        SelectedIndexChanged="pkSector_SelectedIndexChanged"
+                            TitleColor="Black"/>
 
 
-                <Label Text="Seleccione una barberia:"
+                    <Label Text="Seleccione una barberia:"
                        FontSize="20"
                        TextColor="Black"
-                       Margin="5"/>
+                       Margin="5"
+                      />
 
-                <Picker x:Name="pkBarberias" 
+                    <Picker x:Name="pkBarberias" 
                         Title="Barberias" 
                         HorizontalOptions="FillAndExpand" 
                         AnchorY="50" 
-                        Margin="5,0,5,0"/>
-                
-                <Label Text="Seleccione el servicio deseado:"
+                        Margin="5,0,5,0"
+                        SelectedIndexChanged="pkBarberias_SelectedIndexChanged"
+                            TitleColor="Black"/>
+
+                    <Label Text="Seleccione el servicio deseado:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkServicios" 
+                    <Picker x:Name="pkServicios" 
                         Title="Servicios"
                         HorizontalOptions="FillAndExpand"
                         Margin="5,0,5,0"/>
 
-                <Label Text="Seleccione una hora:"
+                    <Label Text="Seleccione una fecha:"
                        FontSize="20"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Picker x:Name="pkHora" 
+                    <DatePicker x:Name="dpkFecha" 
+                        HorizontalOptions="FillAndExpand"  
+                        Margin="5,0,5,0"
+                        DateSelected="dpkFecha_DateSelected"
+                      TextColor="Black"/>
+
+                    <Label Text="Seleccione una hora:"
+                       FontSize="20"
+                       TextColor="Black"
+                       Margin="5"/>
+
+                    <Picker x:Name="pkHora" 
                         Title="Hora" 
                         HorizontalOptions="FillAndExpand"  
-                        Margin="5,0,5,0"/>
+                        Margin="5,0,5,0"
+                        SelectedIndexChanged="pkHora_SelectedIndexChanged"
+                            TitleColor="Black"/>
 
-                <Button 
+                    <Button 
                     x:Name="btncrear_cita" 
                     Text="Crear Cita"
                     FontSize="18"
@@ -82,10 +94,10 @@
                     TextColor="White"
                     BackgroundColor="#5F968E"
                     Margin="15,50,15,0"
-                    Clicked="OnDisplayAlertButtonClicked"
-                    />
-                
-            </StackLayout>
-        </Grid>
+                    Clicked="btncrear_cita_Clicked"/>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

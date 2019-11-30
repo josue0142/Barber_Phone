@@ -26,7 +26,8 @@
                 <Label 
                 Text="Formulario de registro para Cliente." 
                 Margin="10,10,0,0"
-                FontSize="24"/>
+                FontSize="24"
+                    TextColor="Black"/>
 
                 <ActivityIndicator
                 x:Name="waitActivityIndicator"
@@ -38,42 +39,48 @@
                     Placeholder="Primer Nombre"
                     Margin="5,35,5,5"
                     HorizontalTextAlignment="Center"
-                    Keyboard="Text"/>
+                    Keyboard="Text"
+                    PlaceholderColor="Black"/>
 
                 <Entry
                     x:Name="txtapellidob"
                     Placeholder="Primer Apellido"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
-                    Keyboard="Text"/>
+                    Keyboard="Text"
+                    PlaceholderColor="Black"/>
 
                 <Entry
                     x:Name="txtcorreob"
                     Placeholder="Correo Electronico"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
-                    Keyboard="Email"/>
+                    Keyboard="Email"
+                    PlaceholderColor="Black"/>
 
                 <Entry
                     x:Name="txtcontraseñab"
                     Placeholder="Contraseña"
                     IsPassword="True"
                     Margin="5,5,5,5"
-                    HorizontalTextAlignment="Center"/>
+                    HorizontalTextAlignment="Center"
+                    PlaceholderColor="Black"/>
 
                 <Entry
                     x:Name="txtcontraseñaconfb"
                     Placeholder="Confirme su contraseña"
                     IsPassword="True"
                     Margin="5,5,5,5"
-                    HorizontalTextAlignment="Center"/>
+                    HorizontalTextAlignment="Center"
+                    PlaceholderColor="Black"/>
 
                 <Entry
                     x:Name="txttelefono"
                     Placeholder="Numero de Celular"
                     Margin="5,5,5,5"
                     HorizontalTextAlignment="Center"
-                    Keyboard="Numeric"/>
+                    Keyboard="Numeric"
+                    PlaceholderColor="Black"/>
 
                 <Button 
                 x:Name="btnRegistrar"

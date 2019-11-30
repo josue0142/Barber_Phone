@@ -4,38 +4,37 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.Configuracion">
+             x:Class="Barber_Phone.Views.Configuracion"
+              NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
 
-            <Label Text="Configuración"
+                <Label Text="Configuración"
                    HorizontalOptions="Center"
                    FontSize="24"
                    FontAttributes="Bold"
-                   TextColor="Black"
+                   TextColor="#D5C9B1"
                    />
-            <FlexLayout>
-                <BoxView VerticalOptions="FillAndExpand" 
-                         WidthRequest="1000"
-                         HeightRequest="5"
-                         Color="#5F968E"/>
-           </FlexLayout>
-            <Grid>
-            <Label Text="Activar/desactivar Notificaciones"
+               
+                <!--<Grid>
+                    <Label Text="Activar/desactivar Notificaciones"
                    HorizontalOptions="StartAndExpand"
                    FontSize="18" 
                    Margin="5"/>
-            <Switch IsToggled="False" OnColor="#5F968E" HorizontalOptions="EndAndExpand"
+                    <Switch IsToggled="False" OnColor="#5F968E" HorizontalOptions="EndAndExpand"
                     />
-            </Grid>
-            <Label Text="Acerca De"
+                </Grid>-->
+                <Label Text="Acerca De"
                    HorizontalOptions="CenterAndExpand"
-                  FontSize="20">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                  FontSize="20"
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
 
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

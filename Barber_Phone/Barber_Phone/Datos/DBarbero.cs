@@ -55,6 +55,8 @@ namespace Barber_Phone.Datos
             return Enumerable.Empty<Barbero>();
         }
 
+
+
         /// <summary>
         /// Metodo para enviar los datos del barbero que realiza un registro en la aplicacion. 
         /// recibe como parametro un objeto barbero con los datos del barbero que desea registrarse. 
@@ -75,6 +77,26 @@ namespace Barber_Phone.Datos
                 new KeyValuePair<string, string>("contraseña", barbero.Contraseña),
                 new KeyValuePair<string, string>("numero_Telefono",barbero.Numero_Telefono),
                 new KeyValuePair<string, string>("barberia",barbero.Barberia),
+            }
+            );
+
+            /*Consumimos el webservices alojado en la URL, enviamos
+             * mediante el metodo PostAsync los datos del barbero*/
+            await client.PostAsync(URL, content);
+        }
+
+        public async 
+        Task
+UpdateBarbero(Barbero barbero)
+        {
+            HttpClient client = GetClient();
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostUsers/PostBarbero.php";
+
+            //Creamos una tupla con los datos del barbero y lo almacenamos en la variable content 
+            var content = new FormUrlEncodedContent(new[] {
+                new KeyValuePair<string, string>("correo", barbero.Correo),
+                new KeyValuePair<string, string>("contraseña", barbero.Contraseña),
+                new KeyValuePair<string, string>("numero_Telefono",barbero.Numero_Telefono),
             }
             );
 

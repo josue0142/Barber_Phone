@@ -1,5 +1,6 @@
 ﻿using Barber_Phone.Clases;
 using Barber_Phone.Datos;
+using BarberPhoneRD.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +15,35 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Crear_Cita : ContentPage
     {
-        public Crear_Cita(Cliente cliente)
+        Cliente cliente = new Cliente();
+
+        public Crear_Cita(Cliente aux)
         {
             InitializeComponent();
 
-            CargarPkSector();
+            cliente = aux;
 
+            btncrear_cita.IsEnabled = false;
+
+            dpkFecha.MinimumDate = DateTime.Now;
+            dpkFecha.MaximumDate = DateTime.Now.AddDays(6);
+
+
+            CargarPkSector();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void CargarPkSector()
+        private async void CargarPkSector()
         {
+            btncrear_cita.IsEnabled = false;
+
             try
             {
                 /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
                 DDireccionB dDireccionB = new DDireccionB();
-                var res = dDireccionB.GetDireccionB().Result;
+                var res = await dDireccionB.GetDireccionBSector();
 
                 var direccionB = new List<string>();
                 foreach (var item in res)
@@ -40,6 +52,8 @@ namespace Barber_Phone.Views
                 }
 
                 pkSector.ItemsSource = direccionB;
+
+
             }
             catch (Exception)
             {
@@ -47,12 +61,157 @@ namespace Barber_Phone.Views
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sector"></param>
+        private async void CargarPkBarberias(string sector)
+        {
+            btncrear_cita.IsEnabled = false;
+
+            try
+            {
+                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                DBarberia dBarberia = new DBarberia();
+                var res = await dBarberia.GetBarberia(sector);
+
+                var barberia = new List<string>();
+                foreach (var item in res)
+                {
+                    barberia.Add(item.Nombre);
+                }
+
+                pkBarberias.ItemsSource = barberia;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private async void CargarPkServicios()
+        {
+            btncrear_cita.IsEnabled = false;
+
+            try
+            {
+                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                DTipo_Servicio dTipo_Servicio = new DTipo_Servicio();
+                var res = await dTipo_Servicio.GetTipoServicio();
+
+                var Tipo_Servicio = new List<string>();
+                foreach (var item in res)
+                {
+                    Tipo_Servicio.Add(item.Nombre);
+                }
+
+                pkServicios.ItemsSource = Tipo_Servicio;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private async void CargarPkHora()
+        {
+            btncrear_cita.IsEnabled = false;
+
+            try
+            {
+                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                DHora_Servicio dHora_Servicio = new DHora_Servicio();
+                var res = await dHora_Servicio.GetHoraServicio();
+
+                var Hora_Servicio = new List<string>();
+                foreach (var item in res)
+                {
+                    Hora_Servicio.Add(item.Hora);
+                }
+
+                pkHora.ItemsSource = Hora_Servicio;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
         {
             await DisplayAlert("Aviso", "Cita creada satisfactoriamente ", "OK");
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pkSector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btncrear_cita.IsEnabled = false;
+            CargarPkBarberias(pkSector.SelectedItem.ToString());
+            pkServicios.ItemsSource = new List<string>();
+            pkHora.ItemsSource = new List<string>();
+        }
+
+        
+
+        private void pkBarberias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btncrear_cita.IsEnabled = false;
+            CargarPkServicios();
+            CargarPkHora();
+        }
+
+       
+
+        private void dpkFecha_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            btncrear_cita.IsEnabled = false;
+            pkHora.ItemsSource = new List<string>();
+            CargarPkHora();
+
+        }
+
+        private void pkHora_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btncrear_cita.IsEnabled = true;
+        }
+
+        private async void btncrear_cita_Clicked(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DCita dcita = new DCita();
+                var res = await dcita.PostCita(pkSector.SelectedItem.ToString(), 
+                    pkBarberias.SelectedItem.ToString(),
+                    pkServicios.SelectedItem.ToString(),
+                    dpkFecha.Date.ToString(),
+                    pkHora.ToString(),
+                    cliente.Id_Cliente.ToString());
+
+                //Poner un cod para enviar a la pantalla ver cita una vez se cre la cita
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        
     }  
 
 }

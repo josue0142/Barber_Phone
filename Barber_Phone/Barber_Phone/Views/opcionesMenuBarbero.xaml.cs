@@ -34,7 +34,7 @@ namespace Barber_Phone.Views
             };
           Item5.Clicked += async (sender, e) =>
             {
-                await App.Modificador.Detail.Navigation.PushAsync(new PerfilBarbero());
+                await App.Modificador.Detail.Navigation.PushAsync(new PerfilBarbero(barbero));
                 App.Modificador.IsPresented = false;
             };
             Item4.Clicked += async (sender, e) =>

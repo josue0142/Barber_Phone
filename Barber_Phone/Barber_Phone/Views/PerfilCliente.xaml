@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.PerfilBarbero"
-              NavigationPage.HasNavigationBar="True">
+             x:Class="BarberPhoneRD.Views.PerfilCliente">
     <ContentPage.Content>
 
         <ScrollView>
@@ -23,9 +22,7 @@
                        HorizontalOptions="Center"
                        FontSize="25"
                       TextColor="Black" />
-                    <FlexLayout>
-                        <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
-                    </FlexLayout>
+                  
 
                     <Label Text="Nombre"
                            FontSize="20"
@@ -35,7 +32,7 @@
                            Text=""
                            FontSize="16"
                            TextColor="Black"/>
-                    
+
                     <Label Text="Apellido"
                            FontSize="20"
                            TextColor="Black"/>
@@ -47,7 +44,7 @@
 
                     <Label Text="Telefono"
                            FontSize="20"
-                           TextColor="Black"/>
+                          TextColor="Black"/>
 
                     <Label x:Name="lblTelefono"
                            Text=""
@@ -71,17 +68,6 @@
                            FontSize="16"
                            TextColor="Black"/>
 
-                    <!--<Label Text="Barberia Asignada"
-                           FontSize="20"
-                           TextColor="Black"/>
-
-                    <Label x:Name="lblBarberiaA"
-                           Text=""
-
-                           FontSize="16"
-                           TextColor="Black"/>-->
-
-
                     <Button x:Name="btnActualizar"
                         Text="Actualizar Datos"
                     BorderColor="#D5C9B1"
@@ -91,7 +77,7 @@
                     BackgroundColor="#5F968E"
                     Margin="0,200,0,0"
                     Clicked="btnActualizar_Clicked"/>
-                    
+
                 </StackLayout>
             </Grid>
         </ScrollView>

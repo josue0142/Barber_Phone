@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Barber_Phone.Views
+namespace BarberPhoneRD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ActulizarPefilBarbero : ContentPage
+    public partial class ActualizarPerfilCliente : ContentPage
     {
-        Barbero upBarbero = new Barbero();
 
-        public ActulizarPefilBarbero(Barbero barbero)
+        Cliente upcliente = new Cliente();
+
+        public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
 
-            txtTelefono.Text = barbero.Numero_Telefono;
-            txtContraseña.Text = barbero.Contraseña;
-            txtConfContraseña.Text = barbero.Contraseña;
-            upBarbero = barbero;
+            txtTelefono.Text = cliente.Numero_Telefono;
+            txtContraseña.Text = cliente.Contraseña;
+            txtConfContraseña.Text = cliente.Contraseña;
+            upcliente = cliente;
         }
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
@@ -41,11 +42,11 @@ namespace Barber_Phone.Views
                 #endregion
 
                 #region Enviar datos a la BD
-                upBarbero.Contraseña = txtContraseña.Text;
-                upBarbero.Numero_Telefono = txtTelefono.Text;
+                upcliente.Contraseña = txtContraseña.Text;
+                upcliente.Numero_Telefono = txtTelefono.Text;
 
-                DBarbero dBarbero = new DBarbero();
-                await dBarbero.UpdateBarbero(upBarbero);
+                DCliente dCliente = new DCliente();
+                var res = await dCliente.UpdateCliente(upcliente);
 
                 #endregion
             }
@@ -54,6 +55,8 @@ namespace Barber_Phone.Views
 
                 throw;
             }
+
+
         }
     }
 }

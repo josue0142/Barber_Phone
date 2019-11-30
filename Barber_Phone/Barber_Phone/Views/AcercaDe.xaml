@@ -4,8 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.AcercaDe">
-    <Grid Padding="5">
+             x:Class="Barber_Phone.Views.AcercaDe"
+              NavigationPage.HasNavigationBar="True">
+    <!--<Grid Padding="5">-->
+        <ScrollView Padding="5"> 
         <StackLayout Orientation="Vertical">
 
             <Image 
@@ -25,5 +27,6 @@
                    FontSize="18"/>
             
         </StackLayout>
-    </Grid>
+    </ScrollView>
+    <!--</Grid>-->
 </ContentPage>
