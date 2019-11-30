@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Barber_Phone.Views.HistorialCliente" 
-             Title="Historial"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="True">
     <!--Oculta la barra de navegacion superior creada
              por navigationPage-->
     <ContentPage.Content>
@@ -24,9 +23,9 @@
                 <Label Text ="Historial"
                        HorizontalOptions="Center"
                        FontSize="25"
-                       />
+                     TextColor="Black"  />
                 <FlexLayout>
-                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#1690F4"/>
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
                 </FlexLayout>
                 <ListView x:Name="HistorialListView"
                           HasUnevenRows="True">

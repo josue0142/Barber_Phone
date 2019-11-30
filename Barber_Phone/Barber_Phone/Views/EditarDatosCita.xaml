@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BarberPhoneRD.Views.EditarDatosCita"
+    NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.Content>
+        <ScrollView Padding="5">
+            <Grid Padding="5">
+
+                <Image 
+            Source="Barber02" 
+            Aspect="AspectFit"/>
+
+                <BoxView
+                Color="White"
+                Opacity="0.8"/>
+
+                <StackLayout>
+                    <Label Text ="Seleccione el tipo de servicio deseado:"
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                           TextColor="Black"/>
+
+
+                    <Picker Title="Servicio"
+                             x:Name="pkServicio" 
+                        HorizontalOptions="FillAndExpand" 
+                        Margin="5,0,5,0"
+                        SelectedIndexChanged="pkSector_SelectedIndexChanged"
+                        TitleColor="Black"/>
+
+
+
+                    <Button Text="Guardar" FontSize="18"
+                    BorderColor="#D5C9B1"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    TextColor="White"
+                    BackgroundColor="#5F968E"
+                    Margin="0,220,0,0"/>
+
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

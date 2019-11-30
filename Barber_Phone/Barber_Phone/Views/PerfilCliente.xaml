@@ -22,9 +22,7 @@
                        HorizontalOptions="Center"
                        FontSize="25"
                       TextColor="Black" />
-                    <FlexLayout>
-                        <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
-                    </FlexLayout>
+                  
 
                     <Label Text="Nombre"
                            FontSize="20"
@@ -32,7 +30,8 @@
 
                     <Label x:Name="lblNombre"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Apellido"
                            FontSize="20"
@@ -40,15 +39,17 @@
 
                     <Label x:Name="lblApellido"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Telefono"
                            FontSize="20"
-                           TextColor="Black"/>
+                          TextColor="Black"/>
 
                     <Label x:Name="lblTelefono"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Correo Electronico"
                            FontSize="20"
@@ -56,14 +57,16 @@
 
                     <Label x:Name="lblCorreo"
                            Text=""
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Label Text="Contraseña"
                            FontSize="20"
                            TextColor="Black"/>
 
                     <Label Text="*************"
-                           FontSize="16"/>
+                           FontSize="16"
+                           TextColor="Black"/>
 
                     <Button x:Name="btnActualizar"
                         Text="Actualizar Datos"

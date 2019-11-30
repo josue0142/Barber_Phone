@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.Crear_Cita">
+             x:Class="Barber_Phone.Views.Crear_Cita"
+             NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
         <ScrollView>
             <Grid Padding="0.5">
@@ -14,21 +15,13 @@
             Opacity="0.8" />
 
                 <StackLayout>
-                    <Label Text="Crear Citas"
+                    <Label Text="Crear Cita"
                      VerticalOptions="Center" 
                      HorizontalOptions="CenterAndExpand" 
                      FontSize="24"
                      FontAttributes="Bold"
                      TextColor="Black"/>
 
-                    <FlexLayout>
-
-                        <BoxView VerticalOptions="FillAndExpand" 
-                             WidthRequest="1000"
-                             HeightRequest="5" 
-                             Color="#5F968E"/>
-
-                    </FlexLayout>
 
                     <Label Text="Seleccione su sector" FontSize="20"
                        TextColor="Black"
@@ -38,20 +31,23 @@
                         Title="Sector" 
                         HorizontalOptions="FillAndExpand" 
                         Margin="5,0,5,0"
-                        SelectedIndexChanged="pkSector_SelectedIndexChanged"/>
+                        SelectedIndexChanged="pkSector_SelectedIndexChanged"
+                            TitleColor="Black"/>
 
 
                     <Label Text="Seleccione una barberia:"
                        FontSize="20"
                        TextColor="Black"
-                       Margin="5"/>
+                       Margin="5"
+                      />
 
                     <Picker x:Name="pkBarberias" 
                         Title="Barberias" 
                         HorizontalOptions="FillAndExpand" 
                         AnchorY="50" 
                         Margin="5,0,5,0"
-                        SelectedIndexChanged="pkBarberias_SelectedIndexChanged"/>
+                        SelectedIndexChanged="pkBarberias_SelectedIndexChanged"
+                            TitleColor="Black"/>
 
                     <Label Text="Seleccione el servicio deseado:"
                        FontSize="20"
@@ -71,7 +67,8 @@
                     <DatePicker x:Name="dpkFecha" 
                         HorizontalOptions="FillAndExpand"  
                         Margin="5,0,5,0"
-                        DateSelected="dpkFecha_DateSelected"/>
+                        DateSelected="dpkFecha_DateSelected"
+                      TextColor="Black"/>
 
                     <Label Text="Seleccione una hora:"
                        FontSize="20"
@@ -82,7 +79,8 @@
                         Title="Hora" 
                         HorizontalOptions="FillAndExpand"  
                         Margin="5,0,5,0"
-                        SelectedIndexChanged="pkHora_SelectedIndexChanged"/>
+                        SelectedIndexChanged="pkHora_SelectedIndexChanged"
+                            TitleColor="Black"/>
 
                     <Button 
                     x:Name="btncrear_cita" 
