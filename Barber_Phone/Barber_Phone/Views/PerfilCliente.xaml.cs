@@ -13,10 +13,14 @@ namespace BarberPhoneRD.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PerfilCliente : ContentPage
     {
+        Cliente upcliente = new Cliente();
+
         public PerfilCliente(Cliente cliente)
         {
 
             InitializeComponent();
+
+            upcliente = cliente;
 
             #region Carga de datos a los campos del perfil
             lblNombre.Text = cliente.Primer_Nombre;
@@ -27,9 +31,9 @@ namespace BarberPhoneRD.Views
 
         }
 
-        private void btnActualizar_Clicked(object sender, EventArgs e)
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ActualizarPerfilCliente(upcliente));
         }
     }
 }

@@ -4,9 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.ActulizarPefilBarbero"
-              NavigationPage.HasNavigationBar="True">
-
+             x:Class="BarberPhoneRD.Views.ActualizarPerfilCliente">
     <ContentPage.Content>
         <ScrollView Padding="5">
             <Grid Padding="5">
@@ -21,12 +19,13 @@
 
                 <StackLayout>
                     <Label Text ="Actualizar Perfil"
+                           HorizontalOptions="Center"
+                           FontSize="25"/>
 
-                       HorizontalOptions="Center"
-                       FontSize="25"
-                           TextColor="Black"/>
+                    <FlexLayout>
+                        <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
+                    </FlexLayout>
 
-                 
                     <Label Text="Telefono"
                            FontSize="20"
                            TextColor="Black"/>

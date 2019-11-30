@@ -13,6 +13,8 @@ namespace Barber_Phone.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PerfilBarbero : ContentPage
     {
+        Barbero upBarbero = new Barbero();
+
         public PerfilBarbero(Barbero barbero)
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace Barber_Phone.Views
             lblApellido.Text = barbero.Primer_Apellido;
             lblTelefono.Text = barbero.Numero_Telefono;
             lblCorreo.Text = barbero.Correo;
-            lblBarberiaA.Text = barbero.Barberia;
+            //lblBarberiaA.Text = barbero.Barberia;
             #endregion  
 
         }
@@ -33,7 +35,7 @@ namespace Barber_Phone.Views
 
         private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ActulizarPefilBarbero());
+            await Navigation.PushAsync(new ActulizarPefilBarbero(upBarbero));
         }
     }
 
