@@ -20,6 +20,7 @@ namespace BarberPhoneRD.Views
         public EditarDatosCita(Cita editCita,Cliente cliente)
         {
             InitializeComponent();
+            CargarPkServicios();
             btnGuardar.IsEnabled = false;
             xcliente = cliente;
             cita = editCita;
