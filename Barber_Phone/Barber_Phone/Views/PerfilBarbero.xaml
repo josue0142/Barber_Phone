@@ -71,14 +71,16 @@
                            FontSize="16"
                            TextColor="Black"/>
 
-                    <Label Text="Barberia Asignada"
+                    <!--<Label Text="Barberia Asignada"
                            FontSize="20"
                            TextColor="Black"/>
 
                     <Label x:Name="lblBarberiaA"
                            Text=""
+
                            FontSize="16"
                            TextColor="Black"/>
+
 
                     <Button x:Name="btnActualizar"
                         Text="Actualizar Datos"
