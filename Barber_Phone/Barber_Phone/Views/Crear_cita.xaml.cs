@@ -190,22 +190,38 @@ namespace Barber_Phone.Views
 
         private async void btncrear_cita_Clicked(object sender, EventArgs e)
         {
-
+        
             var fecha = Convert.ToDateTime(dpkFecha.Date).ToString("yy/MM/dd");
 
             try
             {
-                DCita dcita = new DCita();
-                var res = await dcita.PostCita(pkSector.SelectedItem.ToString(),
-                    pkBarberias.SelectedItem.ToString(),
-                    pkServicios.SelectedItem.ToString(),
-                    fecha,
-                    pkHora.SelectedItem.ToString(),
-                    cliente.Id_Cliente.ToString()); ;
+                /*Obtenemos los datos del webservices en base al correo del cliente logeado
+              y lo almacenamos en un array*/
+                DCita dCita = new DCita();
+                var res = await dCita.GetCitaCliente(cliente.Correo);
 
-                await DisplayAlert("Aviso", "Solicitud enviada", "Aceptar");
+                /*Verifica si hay 1 objetos en el array res y de ser asi muestra una alerta en
+                      pantalla cita no disponible*/
+                if (res.Count() != 0)
+                {
+                    await DisplayAlert("Mensaje", "Tiene una cita creada", "Aceptar");
+                    await Navigation.PushAsync(new MenuCliente(cliente));
+                    return;
+                }
 
-                await Navigation.PushAsync(new MenuCliente(cliente));
+                     DCita dcita = new DCita();
+                    var res2 = await dcita.PostCita(pkSector.SelectedItem.ToString(),
+                        pkBarberias.SelectedItem.ToString(),
+                        pkServicios.SelectedItem.ToString(),
+                        fecha,
+                        pkHora.SelectedItem.ToString(),
+                        cliente.Id_Cliente.ToString()); ;
+
+                    await DisplayAlert("Aviso", "Solicitud enviada", "Aceptar");
+
+                    await Navigation.PushAsync(new MenuCliente(cliente));
+                
+    
             }
             catch (Exception)
             {
