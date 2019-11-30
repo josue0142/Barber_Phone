@@ -20,7 +20,8 @@
                 <Label Text="Bienvenido a BarberPhoneRD!"
                        HorizontalOptions="Center"
                        FontSize="Title"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
              </StackLayout>
         </Grid>
     </ContentPage.Content>

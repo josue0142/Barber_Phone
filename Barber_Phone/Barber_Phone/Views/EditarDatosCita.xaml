@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Barber_Phone.Views.ActulizarPefilBarbero"
-              NavigationPage.HasNavigationBar="True">
+             x:Class="BarberPhoneRD.Views.EditarDatosCita"
+    NavigationPage.HasNavigationBar="True">
 
     <ContentPage.Content>
         <ScrollView Padding="5">
@@ -20,34 +20,20 @@
                 Opacity="0.8"/>
 
                 <StackLayout>
-                    <Label Text ="Actualizar Perfil"
+                    <Label Text ="Seleccione el tipo de servicio deseado:"
                        HorizontalOptions="Center"
                        FontSize="25"
                            TextColor="Black"/>
 
-                 
-                    <Label Text="Telefono"
-                           FontSize="20"
-                           TextColor="Black"/>
 
-                    <Entry Placeholder="Telefono" Keyboard="Numeric"
-                FontSize="16"/>
+                    <Picker Title="Servicio"
+                             x:Name="pkServicio" 
+                        HorizontalOptions="FillAndExpand" 
+                        Margin="5,0,5,0"
+                        SelectedIndexChanged="pkSector_SelectedIndexChanged"
+                        TitleColor="Black"/>
 
-                    <Label Text="Contraseña"
-                           FontSize="20"
-                           TextColor="Black"/>
 
-                    <Entry Placeholder="Contraseña"
-                FontSize="16"
-                IsPassword="True"/>
-
-                    <Label Text="Confirmar Contraseña"
-                           FontSize="20"
-                           TextColor="Black"/>
-
-                    <Entry Placeholder="Confirmar Contraseña"
-                FontSize="16"
-                 IsPassword="True"/>
 
                     <Button Text="Guardar" FontSize="18"
                     BorderColor="#D5C9B1"

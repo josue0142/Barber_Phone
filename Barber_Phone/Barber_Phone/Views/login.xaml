@@ -19,8 +19,8 @@
 
             <ActivityIndicator
                 x:Name="waitActivityIndicator"
-                VerticalOptions="End"
-                HorizontalOptions="End"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
                 Color="#5F968E"/>
 
             <Entry

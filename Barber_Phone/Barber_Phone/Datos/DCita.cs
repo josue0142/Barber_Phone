@@ -140,5 +140,43 @@ namespace Barber_Phone.Datos
             //En caso de no encontrar datos en res devolvemos un enumerable vacio.
             return Enumerable.Empty<Cita>();
         }
+
+        public async Task<IEnumerable<Cita>> PostCita(string sector, string nBarberia, string tServicio,
+        string fecha, string hora, string id_cliente)
+        {
+            //Task<IEnumerable<Cita>>
+            HttpClient client = GetClient();
+            const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostUsers/PostCliente.php";
+
+            //Creamos una tupla con los datos del cliente y lo almacenamos en la variable content 
+            var content = new FormUrlEncodedContent(new[] {
+                new KeyValuePair<string, string>("sector", sector),
+                new KeyValuePair<string, string>("barberia", nBarberia),
+                new KeyValuePair<string, string>("servicio", tServicio),
+                new KeyValuePair<string, string>("fecha", fecha),
+                new KeyValuePair<string, string>("hora",hora),
+                new KeyValuePair<string, string>("fk_Clientes",id_cliente),
+            }
+            );
+
+            
+            /*Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos del cliente
+             * y obtenemos un array con los datos del cliente en base a la insersion realizada en la BD
+            var res = await client.PostAsync(URL, content);
+
+            /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria
+            if (res.IsSuccessStatusCode)
+            {
+                //Recibimos el contenido de res y lo almacenamos en un string
+                string aux = await res.Content.ReadAsStringAsync();
+
+                /*Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
+                retornamos el array de objetos
+                return JsonConvert.DeserializeObject < IEnumerable<Cita>(aux);
+            }
+
+            //En caso de no encontrar datos en res devolvemos un enumerable vacio.*/
+            return Enumerable.Empty<Cita>();
+        }
     }
 }
