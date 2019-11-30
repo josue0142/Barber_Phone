@@ -26,12 +26,12 @@
                            TextColor="Black"/>
 
 
-                    <Picker Title="Servicio"
+                    <!--<Picker Title="Servicio"
                              x:Name="pkServicio" 
                         HorizontalOptions="FillAndExpand" 
                         Margin="5,0,5,0"
                         SelectedIndexChanged="pkSector_SelectedIndexChanged"
-                        TitleColor="Black"/>
+                        TitleColor="Black"/>-->
 
 
 

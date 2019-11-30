@@ -20,15 +20,17 @@ namespace BarberPhoneRD.Views
         public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
-
-            txtTelefono.Text = cliente.Numero_Telefono;
-            txtContraseña.Text = cliente.Contraseña;
-            txtConfContraseña.Text = cliente.Contraseña;
-            upcliente = cliente;
+            
+            //txtTelefono.Text = cliente.Numero_Telefono;
+            //txtContraseña.Text = cliente.Contraseña;
+            //txtConfContraseña.Text = cliente.Contraseña;
+            
+            upcliente = cliente;    
         }
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
+           
             try
             {
                 #region Validar contraseña
@@ -55,7 +57,6 @@ namespace BarberPhoneRD.Views
 
                 throw;
             }
-
 
         }
     }

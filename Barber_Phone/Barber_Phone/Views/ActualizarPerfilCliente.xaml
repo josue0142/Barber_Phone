@@ -26,8 +26,9 @@
                         <BoxView VerticalOptions="FillAndExpand" WidthRequest="1000" HeightRequest="5" Color="#5F968E"/>
                     </FlexLayout>
 
-                    <Label Text="Telefono"
-                           FontSize="20"
+                    <Label x:Name="lbltel"
+                           Text="Telefono"
+                           FontSize="20"        
                            TextColor="Black"/>
 
                     <Entry x:Name="txtTelefono" 
