@@ -20,9 +20,6 @@ namespace Barber_Phone.Views
         {
             InitializeComponent();
 
-            txtTelefono.Text = barbero.Numero_Telefono;
-            txtContraseña.Text = barbero.Contraseña;
-            txtConfContraseña.Text = barbero.Contraseña;
             upBarbero = barbero;
         }
 

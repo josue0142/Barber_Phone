@@ -191,17 +191,21 @@ namespace Barber_Phone.Views
         private async void btncrear_cita_Clicked(object sender, EventArgs e)
         {
 
+            var fecha = Convert.ToDateTime(dpkFecha.Date).ToString("yy/MM/dd");
+
             try
             {
                 DCita dcita = new DCita();
-                var res = await dcita.PostCita(pkSector.SelectedItem.ToString(), 
+                var res = await dcita.PostCita(pkSector.SelectedItem.ToString(),
                     pkBarberias.SelectedItem.ToString(),
                     pkServicios.SelectedItem.ToString(),
-                    dpkFecha.Date.ToString(),
-                    pkHora.ToString(),
-                    cliente.Id_Cliente.ToString());
+                    fecha,
+                    pkHora.SelectedItem.ToString(),
+                    cliente.Id_Cliente.ToString()); ;
 
-                //Poner un cod para enviar a la pantalla ver cita una vez se cre la cita
+                await DisplayAlert("Aviso", "Solicitud enviada", "Aceptar");
+
+                await Navigation.PushAsync(new MenuCliente(cliente));
             }
             catch (Exception)
             {

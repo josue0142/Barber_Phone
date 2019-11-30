@@ -20,11 +20,7 @@ namespace BarberPhoneRD.Views
         public ActualizarPerfilCliente(Cliente cliente)
         {
             InitializeComponent();
-            
-            //txtTelefono.Text = cliente.Numero_Telefono;
-            //txtContraseña.Text = cliente.Contraseña;
-            //txtConfContraseña.Text = cliente.Contraseña;
-            
+                     
             upcliente = cliente;    
         }
 
