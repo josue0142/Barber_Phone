@@ -85,9 +85,13 @@ namespace Barber_Phone.Datos
             await client.PostAsync(URL, content);
         }
 
-        public async 
-        Task
-UpdateBarbero(Barbero barbero)
+        /// <summary>
+        /// Metodo para enviar los datos del barbero que realiza una actualizacion de sus datos. 
+        /// recibe como parametro un objeto barbero con los datos del barbero que desea actualizar datos. 
+        /// </summary>
+        /// <param name="barbero"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<Barbero>> UpdateBarbero(Barbero barbero)
         {
             HttpClient client = GetClient();
             const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/UpdatUsers/UpdateBarbero.php";
@@ -100,9 +104,23 @@ UpdateBarbero(Barbero barbero)
             }
             );
 
-            /*Consumimos el webservices alojado en la URL, enviamos
-             * mediante el metodo PostAsync los datos del barbero*/
-            await client.PostAsync(URL, content);
+            /*Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos del barbero
+             * y obtenemos un array con los datos del barbero en base a la actualziacion realizada en la BD*/
+            var res = await client.PostAsync(URL, content);
+
+            /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria*/
+            if (res.IsSuccessStatusCode)
+            {
+                //Recibimos el contenido de res y lo almacenamos en un string
+                string aux = await res.Content.ReadAsStringAsync();
+
+                /*Convertimos el contenido del Json a un array de objetos de tipo Barbero y luego
+                retornamos el array de objetos*/
+                return JsonConvert.DeserializeObject<IEnumerable<Barbero>>(aux);
+            }
+
+            //En caso de no encontrar datos en res devolvemos un enumerable vacio.
+            return Enumerable.Empty<Barbero>();
         }
     }
 }

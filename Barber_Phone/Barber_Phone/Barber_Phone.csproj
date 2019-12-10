@@ -29,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\background.xaml.cs">
-      <DependentUpon>background.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Crear_cita.xaml.cs">
       <DependentUpon>Crear_Cita.xaml</DependentUpon>
     </Compile>
@@ -72,9 +69,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\login.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\background.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MenuBarbero.xaml">

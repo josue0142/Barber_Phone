@@ -26,15 +26,15 @@ namespace Barber_Phone.Datos
         }
 
         /// <summary>
-        /// 
+        /// Metodo para obtener los sectores en base a la direccion de las barberias. 
+        /// utiliza el sector como parametro de busqueda   
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<DireccionB>> GetDireccionBSector()
         {
             HttpClient client = GetClient();
             const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetDireccionBSector.php";
-            /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos del usuario en base al 
-            correo recibido por parametro*/
+            /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos de los sectores*/
             var res = await client.GetAsync(URL);
 
             /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria*/
@@ -43,7 +43,7 @@ namespace Barber_Phone.Datos
                 //Recibimos el contenido de res y lo almacenamos en un string
                 string content = await res.Content.ReadAsStringAsync();
 
-                /*Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
+                /*Convertimos el contenido del Json a un array de objetos de tipo DireccionB y luego
                 retornamos el array de objetos*/
                 return JsonConvert.DeserializeObject<IEnumerable<DireccionB>>(content);
             }

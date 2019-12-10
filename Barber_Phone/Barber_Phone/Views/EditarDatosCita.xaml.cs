@@ -61,7 +61,7 @@ namespace BarberPhoneRD.Views
             try
             {
                 DTipo_Servicio dTipo_Servicio = new DTipo_Servicio();
-                var res = await dTipo_Servicio.UpdateTipoServicio(pkServicios.SelectedItem.ToString(),cita);
+                await dTipo_Servicio.UpdateTipoServicio(pkServicios.SelectedItem.ToString(),cita);
 
                 await DisplayAlert("Proceso", "Procesando los cambios", "Aceptar");
 

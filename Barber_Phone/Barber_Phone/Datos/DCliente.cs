@@ -97,6 +97,12 @@ namespace Barber_Phone.Datos
             return Enumerable.Empty<Cliente>();
         }
 
+        /// <summary>
+        /// Metodo para enviar los datos del cliente que realiza una actualizacion de sus datos. 
+        /// recibe como parametro un objeto cliente con los datos del barbero que desea actualizar datos. 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<Cliente>> UpdateCliente(Cliente cliente)
         {
             HttpClient client = GetClient();

@@ -23,6 +23,12 @@ namespace Barber_Phone.Views
             upBarbero = barbero;
         }
 
+        /// <summary>
+        /// Metodo utilizado cuando se presiona 1 vez el btnGuardar. Ejecuta las instrucciones
+        /// para actualizar los datos del usuario en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
             try
@@ -31,7 +37,6 @@ namespace Barber_Phone.Views
                 //Validamos si los campos de contraseña y confirmacion de contraseña son iguales
                 if (txtContraseña.Text != txtConfContraseña.Text)
                 {
-                    //ActivarDesactivarActivityIndicator(false);
                     await DisplayAlert("Error", "Contraseñas no coinciden", "Aceptar");
                     return;
                 }
@@ -42,7 +47,7 @@ namespace Barber_Phone.Views
                 upBarbero.Numero_Telefono = txtTelefono.Text;
 
                 DBarbero dBarbero = new DBarbero();
-                await dBarbero.UpdateBarbero(upBarbero);
+                var res = await dBarbero.UpdateBarbero(upBarbero);
 
                 #endregion
 

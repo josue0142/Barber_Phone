@@ -27,7 +27,8 @@ namespace BarberPhoneRD.Datos
         }
 
         /// <summary>
-        /// 
+        /// Metodo para obtener los datos de las barberias. 
+        /// utiliza el sector como parametro de busqueda   
         /// </summary>
         /// <param name="sector"></param>
         /// <returns></returns>
@@ -35,8 +36,8 @@ namespace BarberPhoneRD.Datos
         {
             HttpClient client = GetClient();
             const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/GetBarberia.php";
-            /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos del usuario en base al 
-            correo recibido por parametro*/
+            /*Consumimos el webservices alojado en la URL y obtenemos un array con los datos de las barberias en 
+             * base al sector enviado como parametro*/
             var res = await client.GetAsync(URL + "?sector=" + sector + " ");
 
             /*Evaluamos la respuesta HTTP recibida en res fue satisfactoria*/
@@ -45,7 +46,7 @@ namespace BarberPhoneRD.Datos
                 //Recibimos el contenido de res y lo almacenamos en un string
                 string content = await res.Content.ReadAsStringAsync();
 
-                /*Convertimos el contenido del Json a un array de objetos de tipo Babero y luego
+                /*Convertimos el contenido del Json a un array de objetos de tipo barberia y luego
                 retornamos el array de objetos*/
                 return JsonConvert.DeserializeObject<IEnumerable<Barberia>>(content);
             }

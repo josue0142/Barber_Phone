@@ -24,15 +24,18 @@ namespace Barber_Phone.Views
             lblApellido.Text = barbero.Primer_Apellido;
             lblTelefono.Text = barbero.Numero_Telefono;
             lblCorreo.Text = barbero.Correo;
+            upBarbero = barbero;
             //lblBarberiaA.Text = barbero.Barberia;
             #endregion  
 
         }
-        /*private async void btnActualizarDatosB_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ActulizarPefilBarbero());
-        }*/
 
+        /// <summary>
+        /// Metodo utilizado cuando se presiona 1 vez el btnActualizar. envia al usuario
+        /// a la pantalla para actualizar los datos permitidos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ActulizarPefilBarbero(upBarbero));

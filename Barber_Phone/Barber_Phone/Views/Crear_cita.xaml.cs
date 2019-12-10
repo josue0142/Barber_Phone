@@ -33,7 +33,7 @@ namespace Barber_Phone.Views
         }
 
         /// <summary>
-        /// 
+        /// Metodo para cargar los datos del picker PkSector
         /// </summary>
         private async void CargarPkSector()
         {
@@ -62,7 +62,7 @@ namespace Barber_Phone.Views
         }
 
         /// <summary>
-        /// 
+        /// Metodo para cargar el picker PkBarberias
         /// </summary>
         /// <param name="sector"></param>
         private async void CargarPkBarberias(string sector)
@@ -71,7 +71,7 @@ namespace Barber_Phone.Views
 
             try
             {
-                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                /*Obtenemos los datos de las barberias disponibles y lo almacenamos en un array*/
                 DBarberia dBarberia = new DBarberia();
                 var res = await dBarberia.GetBarberia(sector);
 
@@ -90,13 +90,16 @@ namespace Barber_Phone.Views
             }
         }
 
+        /// <summary>
+        /// Metodo para cargar el picker PkServicios
+        /// </summary>
         private async void CargarPkServicios()
         {
             btncrear_cita.IsEnabled = false;
 
             try
             {
-                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                /*Obtenemos los datos de los servicios disponibles y lo almacenamos en un array*/
                 DTipo_Servicio dTipo_Servicio = new DTipo_Servicio();
                 var res = await dTipo_Servicio.GetTipoServicio();
 
@@ -115,13 +118,16 @@ namespace Barber_Phone.Views
             }
         }
 
+        /// <summary>
+        /// Metodo para cargar el picker PkHora
+        /// </summary>
         private async void CargarPkHora()
         {
             btncrear_cita.IsEnabled = false;
 
             try
             {
-                /*Obtenemos los datos de los sector disponibles y lo almacenamos en un array*/
+                /*Obtenemos los datos de las horas disponibles y lo almacenamos en un array*/
                 DHora_Servicio dHora_Servicio = new DHora_Servicio();
                 var res = await dHora_Servicio.GetHoraServicio();
 
@@ -140,22 +146,7 @@ namespace Barber_Phone.Views
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Aviso", "Cita creada satisfactoriamente ", "OK");
 
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void pkSector_SelectedIndexChanged(object sender, EventArgs e)
         {
             btncrear_cita.IsEnabled = false;
@@ -163,7 +154,6 @@ namespace Barber_Phone.Views
             pkServicios.ItemsSource = new List<string>();
             pkHora.ItemsSource = new List<string>();
         }
-
         
 
         private void pkBarberias_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,7 +164,6 @@ namespace Barber_Phone.Views
         }
 
        
-
         private void dpkFecha_DateSelected(object sender, DateChangedEventArgs e)
         {
             btncrear_cita.IsEnabled = false;
@@ -195,13 +184,9 @@ namespace Barber_Phone.Views
 
             try
             {
-                /*Obtenemos los datos del webservices en base al correo del cliente logeado
-              y lo almacenamos en un array*/
                 DCita dCita = new DCita();
                 var res = await dCita.GetCitaCliente(cliente.Correo);
 
-                /*Verifica si hay 1 objetos en el array res y de ser asi muestra una alerta en
-                      pantalla cita no disponible*/
                 if (res.Count() != 0)
                 {
                     await DisplayAlert("Mensaje", "Tiene una cita creada", "Aceptar");
@@ -210,7 +195,7 @@ namespace Barber_Phone.Views
                 }
 
                      DCita dcita = new DCita();
-                    var res2 = await dcita.PostCita(pkSector.SelectedItem.ToString(),
+                     await dcita.PostCita(pkSector.SelectedItem.ToString(),
                         pkBarberias.SelectedItem.ToString(),
                         pkServicios.SelectedItem.ToString(),
                         fecha,

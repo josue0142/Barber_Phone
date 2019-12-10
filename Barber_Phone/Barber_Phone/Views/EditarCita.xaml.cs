@@ -21,14 +21,14 @@ namespace BarberPhoneRD.Views
         {
             InitializeComponent();
             delCliente = cliente;
-            VerCita(cliente);
+            editarCita(cliente);
         }
 
         /// <summary>
-        /// Metodo para mostrar la cita al cliente. 
+        /// Metodo para mostrar la cita al cliente y el btn editar. 
         /// </summary>
         /// <param name="cliente"></param>
-        public async void VerCita(Cliente cliente)
+        public async void editarCita(Cliente cliente)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace BarberPhoneRD.Views
 
 
                 //Establecemos la variable cita como la fuente de datos para
-                //el listview de la pantalla verCita
+                //el listview de la pantalla editar cita
                 MainListView.ItemsSource = cita;
 
             }

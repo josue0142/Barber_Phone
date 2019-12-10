@@ -87,7 +87,7 @@ namespace Barber_Phone.Datos
 
         /// <summary>
         /// Metodo para obtener los datos de las citas(Completadas), relacionados con el correo del barbero que esta 
-        /// logeado en la apliacion.
+        /// logeado en la aplicacion.
         /// </summary>
         /// <param name="correo"></param>
         /// <returns></returns>
@@ -143,14 +143,24 @@ namespace Barber_Phone.Datos
             return Enumerable.Empty<Cita>();
         }
 
-        public async Task<IEnumerable<Cita>> PostCita(string sector, string nBarberia, string tServicio,
+
+        /// <summary>
+        /// Metodo para enviar los datos de la cita que el usuario desea crear a la base da datos.  
+        /// </summary>
+        /// <param name="sector"></param>
+        /// <param name="nBarberia"></param>
+        /// <param name="tServicio"></param>
+        /// <param name="fecha"></param>
+        /// <param name="hora"></param>
+        /// <param name="id_cliente"></param>
+        /// <returns></returns>
+        public async Task PostCita(string sector, string nBarberia, string tServicio,
         string fecha, string hora, string id_cliente)
         {
-            //Task<IEnumerable<Cita>>
             HttpClient client = GetClient();
             const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/PostCitas/PostCita.php";
 
-            //Creamos una tupla con los datos del cliente y lo almacenamos en la variable content 
+            //Creamos una tupla con los datos de la cita y lo almacenamos en la variable content 
             var content = new FormUrlEncodedContent(new[] {
                 new KeyValuePair<string, string>("sector", sector),
                 new KeyValuePair<string, string>("barberia", nBarberia),
@@ -160,57 +170,31 @@ namespace Barber_Phone.Datos
                 new KeyValuePair<string, string>("fk_Clientes",id_cliente),
             }
             );
+          
+            //Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos de la cita
+             // y obtenemos un array con los datos de la cita en base a la insersion realizada en la BD
+             await client.PostAsync(URL, content);
 
-            
-            //Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos del cliente
-             // y obtenemos un array con los datos del cliente en base a la insersion realizada en la BD
-            var res = await client.PostAsync(URL, content);
-
-            //Evaluamos la respuesta HTTP recibida en res fue satisfactoria
-           // if (res.IsSuccessStatusCode)
-           // {
-                //Recibimos el contenido de res y lo almacenamos en un string
-               // string aux = await res.Content.ReadAsStringAsync();
-
-                //Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
-                //retornamos el array de objetos
-                //return JsonConvert.DeserializeObject < IEnumerable<Cita>(aux);
-           // }
-
-            //En caso de no encontrar datos en res devolvemos un enumerable vacio.
-            return Enumerable.Empty<Cita>();
         }
 
+        /// <summary>
+        /// Metodo para eliminar una cita en la base da datos.  
+        /// </summary>
+        /// <param name="id_Cita"></param>
         public async void EliminarCita(int id_Cita)
         {
-            //Task<IEnumerable<Cita>>
             HttpClient client = GetClient();
             const string URL = "https://bookshop2.000webhostapp.com/WebServicesXamarin/Delete/EliminarCita.php";
 
-            //Creamos una tupla con los datos del cliente y lo almacenamos en la variable content 
+            //Creamos una tupla con los datos de la cita y lo almacenamos en la variable content 
             var content = new FormUrlEncodedContent(new[] {
                 new KeyValuePair<string, string>("id_Cita", id_Cita.ToString()),
             }
             );
 
-
-            //Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos del cliente
-            // y obtenemos un array con los datos del cliente en base a la insersion realizada en la BD
-            var res = await client.PostAsync(URL, content);
-
-            //Evaluamos la respuesta HTTP recibida en res fue satisfactoria
-            // if (res.IsSuccessStatusCode)
-            // {
-            //Recibimos el contenido de res y lo almacenamos en un string
-            // string aux = await res.Content.ReadAsStringAsync();
-
-            //Convertimos el contenido del Json a un array de objetos de tipo Cliente y luego
-            //retornamos el array de objetos
-            //return JsonConvert.DeserializeObject < IEnumerable<Cita>(aux);
-            // }
-
-            //En caso de no encontrar datos en res devolvemos un enumerable vacio.
-            //return Enumerable.Empty<Cita>();
+            //Consumimos el webservices alojado en la URL, enviamos mediante el metodo PostAsync los datos de la cita   
+            //que sera eliminada
+            await client.PostAsync(URL, content);
         }
     }
 }

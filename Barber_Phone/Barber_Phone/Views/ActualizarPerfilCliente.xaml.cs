@@ -24,16 +24,20 @@ namespace BarberPhoneRD.Views
             upcliente = cliente;    
         }
 
+        /// <summary>
+        /// Metodo utilizado cuando se presiona 1 vez el btnGuardar. Ejecuta las instrucciones
+        /// para actualizar los datos del usuario en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
-           
             try
             {
                 #region Validar contraseña
                 //Validamos si los campos de contraseña y confirmacion de contraseña son iguales
                 if (txtContraseña.Text != txtConfContraseña.Text)
-                {
-                    //ActivarDesactivarActivityIndicator(false);
+                {   
                     await DisplayAlert("Error", "Contraseñas no coinciden", "Aceptar");
                     return;
                 }

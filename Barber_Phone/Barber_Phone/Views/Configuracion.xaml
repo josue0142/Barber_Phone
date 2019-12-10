@@ -16,15 +16,7 @@
                    FontAttributes="Bold"
                    TextColor="#D5C9B1"
                    />
-               
-                <!--<Grid>
-                    <Label Text="Activar/desactivar Notificaciones"
-                   HorizontalOptions="StartAndExpand"
-                   FontSize="18" 
-                   Margin="5"/>
-                    <Switch IsToggled="False" OnColor="#5F968E" HorizontalOptions="EndAndExpand"
-                    />
-                </Grid>-->
+              
                 <Label Text="Acerca De"
                    HorizontalOptions="CenterAndExpand"
                   FontSize="20"

@@ -22,7 +22,7 @@ namespace Barber_Phone.Views
         }
 
         /// <summary>
-        /// Metodo para mostrar el historial del cliente.
+        /// Metodo para mostrar el historial del Barbero.
         /// </summary>
         /// <param name="barbero"></param>
         private async void MostrarHistorial(Barbero barbero)
